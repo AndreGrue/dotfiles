@@ -23,7 +23,7 @@ alias e='exit'
 
 # git
 alias gl='git pull'
-alias gs='git push'
+alias gp='git push'
 alias gs='git status'
 alias gm='git commit'
 alias ga='git add'
