@@ -12,7 +12,7 @@ size = 12
 
 [font.normal]
 #family = "UbuntuMono Nerd Font"
-family = "Source Code Pro"
+family = "SauceCodePro Nerd Font"
 
 [window]
 decorations = "none"
