@@ -27,5 +27,6 @@ alias gp='git push'
 alias gs='git status'
 alias gm='git commit'
 alias ga='git add'
+alias gc='git checkout'
 alias lg='lazygit'
 
