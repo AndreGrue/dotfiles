@@ -1,10 +1,21 @@
-eval export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+#
+#  .bashrc
+#
 
+
+#
+# environment variables 
+#
+export XDG_CONFIG_HOME="$HOME"/.config
+
+
+export WORKSPACE="$HOME"/workspace
+export DOTFILES="$WORKSPACE/dotfiles"
+export SCRIPTS="$DOTFILES/scripts"
+
+
+PATH="${PATH:+${PATH}:}"$SCRIPTS # appending
+export PATH
 
 #
 #
@@ -16,6 +27,7 @@ eval "$(starship init bash)"
 #  alias
 #
 alias ll='ls -la'
+alias ..="cd .."
 
 alias v='nvim'
 alias t='tmux'
