@@ -20,6 +20,7 @@ alias ll='ls -la'
 alias v='nvim'
 alias t='tmux'
 alias e='exit'
+alias c='clear'
 
 # git
 alias gl='git pull'
