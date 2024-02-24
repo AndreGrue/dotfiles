@@ -4,10 +4,10 @@
 #
 # bash
 #
-cat /etc/shells
-brew install bash
-echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
-chsh -s $(brew --prefix)/bin/bash
+#cat /etc/shells
+#brew install bash
+#echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
+#chsh -s $(brew --prefix)/bin/bash
 
 #
 # font
@@ -20,8 +20,11 @@ brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-fon
 #
 #
 brew install starship
-brew install --cask alacritty
-brew install neovim go lazygit 
+brew install alacritty
+
+brew install neovim ripgrep fd 
+
+brew install git lazygit 
 
 
 

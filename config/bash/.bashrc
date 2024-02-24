@@ -8,7 +8,6 @@
 #
 export XDG_CONFIG_HOME="$HOME"/.config
 
-
 export WORKSPACE="$HOME"/workspace
 export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
@@ -29,10 +28,10 @@ eval "$(starship init bash)"
 alias ll='ls -la'
 alias ..="cd .."
 
-alias v='nvim'
-alias t='tmux'
 alias e='exit'
 alias c='clear'
+alias v='nvim'
+alias t='tmux'
 
 # git
 alias gl='git pull'
