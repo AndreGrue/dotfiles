@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #
 # bash
 #
@@ -22,9 +21,10 @@ brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-fon
 brew install starship
 brew install alacritty
 
-brew install neovim ripgrep fd 
+brew install curl wget unzip gzip tar
+brew install npm
+brew install neovim ripgrep fd
 
-brew install git lazygit 
+brew install git lazygit
 
-
-
+brew install lazydocker
