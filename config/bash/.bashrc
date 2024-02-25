@@ -2,16 +2,14 @@
 #  .bashrc
 #
 
-
 #
-# environment variables 
+# environment variables
 #
 export XDG_CONFIG_HOME="$HOME"/.config
 
 export WORKSPACE="$HOME"/workspace
 export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
-
 
 PATH="${PATH:+${PATH}:}"$SCRIPTS # appending
 export PATH
@@ -20,7 +18,7 @@ export PATH
 #
 #
 eval "$(starship init bash)"
-
+eval "$(thefuck --alias)"
 
 #
 #  alias
@@ -32,6 +30,7 @@ alias e='exit'
 alias c='clear'
 alias v='nvim'
 alias t='tmux'
+alias f='fuck'
 
 # git
 alias gl='git pull'
@@ -43,4 +42,3 @@ alias ga='git add'
 alias gc='git checkout'
 alias gb='git branch'
 alias lg='lazygit'
-

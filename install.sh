@@ -20,6 +20,7 @@ brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-fon
 #
 brew install starship
 brew install alacritty
+brew install thefuck fzf
 
 brew install curl wget unzip gzip tar
 brew install npm
