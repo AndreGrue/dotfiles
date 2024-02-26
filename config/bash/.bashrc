@@ -11,7 +11,7 @@ export WORKSPACE="$HOME"/workspace
 export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 
-PATH="${PATH:+${PATH}:}"$SCRIPTS # appending
+PATH="${PATH:+${PATH}:}"$SCRIPTS":/opt/nvim-linux64/bin" # appending
 export PATH
 
 #

@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#
-# bash
-#
-#cat /etc/shells
-#brew install bash
-#echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
-#chsh -s $(brew --prefix)/bin/bash
 
 #
 # font
@@ -24,7 +17,17 @@ brew install thefuck fzf
 
 brew install curl wget unzip gzip tar
 brew install npm
-brew install neovim ripgrep fd
+
+
+# tmux
+sudo apt-get install tmux
+
+# neovim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+
+
 
 brew install git lazygit
 
