@@ -10,13 +10,15 @@ https://github.com/junegunn/fzf?tab=readme-ov-file#fuzzy-completion-for-bash-and
 
 http://www.lazyvim.org
 
+## fzf
+https://github.com/junegunn/fzf
+
 
 ## tmux 
+ https://github.com/tmux/tmux/wiki  
  https://tmuxcheatsheet.com  
  https://github.com/tmux-plugins/tpm  
 
-
-
-https://neovim.io
-
+## neovim 
+https://neovim.org
 

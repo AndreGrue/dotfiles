@@ -18,7 +18,11 @@ brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-fon
 # terminal
 brew install starship
 brew install alacritty
-brew install thefuck fzf
+brew install thefuck
+
+# fzf
+brew install fzf
+$(brew --prefix)/opt/fzf/install
 
 # tmux
 brew install tmux

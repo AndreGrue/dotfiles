@@ -42,3 +42,5 @@ alias ga='git add'
 alias gc='git checkout'
 alias gb='git branch'
 alias lg='lazygit'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
