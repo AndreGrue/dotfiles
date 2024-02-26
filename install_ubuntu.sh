@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #
 # font
 # https://www.nerdfonts.com/font-downloads
@@ -18,16 +17,14 @@ brew install thefuck fzf
 brew install curl wget unzip gzip tar
 brew install npm
 
-
 # tmux
 sudo apt-get install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
-
-
 
 brew install git lazygit
 
