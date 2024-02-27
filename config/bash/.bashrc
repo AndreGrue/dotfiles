@@ -38,6 +38,7 @@ alias c='clear'
 alias v='nvim'
 alias t='tmux'
 alias f='fuck'
+alias h='history'
 
 # git
 alias gl='git pull'

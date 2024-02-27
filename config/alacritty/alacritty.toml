@@ -20,3 +20,8 @@ decorations = "none"
 [window.padding]
 x = 10
 y = 10
+
+[keyboard]
+bindings = [
+  { key = "C",  mods = "Alt",           chars = "\u001bC"                       }
+]
