@@ -19,13 +19,19 @@ export PATH
 #
 eval "$(starship init bash)"
 eval "$(thefuck --alias)"
+
+# FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 #
 #  alias
 #
 alias ll='ls -la'
 alias ..="cd .."
+alias reload='source ~/.bashrc'
 
 alias e='exit'
 alias c='clear'

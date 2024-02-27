@@ -15,7 +15,7 @@ brew install alacritty
 brew install thefuck
 
 # fzf
-sudo apt install fzf
+sudo apt install fzf fd
 
 brew install curl wget unzip gzip tar
 brew install npm

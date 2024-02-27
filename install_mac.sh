@@ -21,7 +21,7 @@ brew install alacritty
 brew install thefuck
 
 # fzf
-brew install fzf
+brew install fzf fd
 $(brew --prefix)/opt/fzf/install
 
 # tmux
@@ -31,7 +31,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # neovim
 brew install curl wget unzip gzip tar
 brew install npm
-brew install neovim ripgrep fd
+brew install neovim ripgrep
 
 #
 brew install git lazygit
