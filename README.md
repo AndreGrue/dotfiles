@@ -5,17 +5,18 @@ configuration files
 
 ## Alaritty
 
-## starship
-https://starship.rs
+http://www.lazyvim.org
 
 ## fzf
+
 https://github.com/junegunn/fzf
 
 ## tmux
-https://github.com/tmux/tmux/wiki  
-https://tmuxcheatsheet.com  
-https://github.com/tmux-plugins/tpm  
+
+ https://github.com/tmux/tmux/wiki  
+ https://tmuxcheatsheet.com  
+ https://github.com/tmux-plugins/tpm  
 
 ## neovim
-http://www.lazyvim.org
+
 https://neovim.org
