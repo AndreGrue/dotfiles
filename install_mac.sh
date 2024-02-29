@@ -18,7 +18,12 @@ brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-fon
 # terminal
 brew install starship
 brew install alacritty
-brew install thefuck
+
+# commandline tools
+brew install eza bat ripgrep zoxide entr thefuck
+brew install mc ncdu btop htop
+brew install unzip gzip tar
+brew install curl wget rsync
 
 # fzf
 brew install fzf fd
@@ -29,9 +34,8 @@ brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
-brew install curl wget unzip gzip tar
 brew install npm
-brew install neovim ripgrep
+brew install neovim
 
 #
 brew install git lazygit

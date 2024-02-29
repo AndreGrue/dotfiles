@@ -19,6 +19,7 @@ export PATH
 #
 eval "$(starship init bash)"
 eval "$(thefuck --alias)"
+eval "$(zoxide init bash)"
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -29,8 +30,18 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #
 #  alias
 #
-alias ll='ls -la'
-alias ..="cd .."
+#alias ll='ls -la'
+alias ls='eza'
+alias ll='eza -alh'
+alias tree='eza --tree'
+
+alias cat='bat'
+
+alias cd='z'
+alias ..="cd .." # one back
+alias ~='cd ~'   # cd home dir
+alias ret='z -'  # cd last dir in
+
 alias reload='source ~/.bashrc'
 
 alias e='exit'
