@@ -23,3 +23,8 @@ https://github.com/tmux-plugins/tpm
 https://neovim.org
 http://www.lazyvim.org
 
+
+https://vim.rtorr.com
+
+
+
