@@ -23,7 +23,8 @@ https://github.com/tmux-plugins/tpm
 https://neovim.org
 http://www.lazyvim.org
 
-
+### cheat sheets
+https://devhints.io/vim
 https://vim.rtorr.com
 
 

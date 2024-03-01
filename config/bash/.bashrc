@@ -31,9 +31,17 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #  alias
 #
 #alias ll='ls -la'
-alias ls='eza'
-alias ll='eza -alh'
-alias tree='eza --tree'
+if command -v eza &>/dev/null; then
+	alias ls='eza'
+	alias ll='eza -alhg'
+	alias tree='eza --tree'
+fi
+
+if command -v exa &>/dev/null; then
+	alias ls='exa'
+	alias ll='exa -alhg'
+	alias tree='exa --tree'
+fi
 
 alias cat='bat'
 

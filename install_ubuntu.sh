@@ -8,7 +8,7 @@
 #brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-font
 
 # common
-sudo apt install eza bat ripgrep zoxide entr thefuck
+sudo apt install exa bat ripgrep zoxide entr thefuck
 sudo apt install mc ncdu btop htop
 sudo apt install curl wget rysnc
 sudo apt install unzip gzip tar
