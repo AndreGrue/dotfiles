@@ -20,12 +20,11 @@ https://github.com/tmux-plugins/tpm
 
 ## neovim
 
-https://neovim.org
-http://www.lazyvim.org
+https://neovim.org  
+http://www.lazyvim.org  
 
 ### cheat sheets
-https://devhints.io/vim
-https://vim.rtorr.com
-
+https://devhints.io/vim  
+https://vim.rtorr.com  
 
 
