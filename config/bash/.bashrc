@@ -48,11 +48,11 @@ alias cat='bat'
 alias cd='z'
 alias ..="cd .." # one back
 alias ~='cd ~'   # cd home dir
-alias ret='z -'  # cd last dir in
+alias -- -='z -' # cd last dir in
 
 alias reload='source ~/.bashrc'
 
-alias e='exit'
+alias x='exit'
 alias c='clear'
 alias v='nvim'
 alias t='tmux'
