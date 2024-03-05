@@ -23,5 +23,11 @@ y = 10
 
 [keyboard]
 bindings = [
-  { key = "C",  mods = "Alt",           chars = "\u001bC"                       }
+  { key = "C",  mods = "Alt",           chars = "\u001bc"                       },
+  { key = "H",  mods = "Alt",           chars = "\u001bh"                       },
+  { key = "J",  mods = "Alt",           chars = "\u001bj"                       },
+  { key = "K",  mods = "Alt",           chars = "\u001bk"                       },
+  { key = "L",  mods = "Alt",           chars = "\u001bl"                       },
 ]
+
+
