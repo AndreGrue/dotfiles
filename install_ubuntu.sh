@@ -10,7 +10,7 @@
 # common
 sudo apt install exa bat ripgrep zoxide entr thefuck
 sudo apt install mc ncdu btop htop
-sudo apt install curl wget rysnc
+sudo apt install curl wget rsync
 sudo apt install unzip gzip tar
 
 # fzf
@@ -37,6 +37,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #sudo rm -rf /opt/nvim
 #sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
-#brew install git lazygit
+# git
+#sudo add-apt-repository ppa:lazygit-team/release
+#sudo apt update
+#sudo apt install lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+sudo apt install git
 
 #brew install lazydocker
