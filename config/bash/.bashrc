@@ -50,6 +50,9 @@ alias ..="cd .." # one back
 alias ~='cd ~'   # cd home dir
 alias -- -='z -' # cd last dir in
 
+alias rmr='rm -r'
+alias rmrf='rm -rf'
+
 alias reload='source ~/.bashrc'
 
 alias x='exit'
