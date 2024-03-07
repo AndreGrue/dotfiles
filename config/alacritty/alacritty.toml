@@ -5,7 +5,13 @@
 
 
 # themes from https://github.com/alacritty/alacritty-theme
-import = ["~/.config/alacritty/themes/themes/hardhacker.toml"]
+#import = ["~/.config/alacritty/themes/themes/hardhacker.toml"]
+#import = ["~/.config/alacritty/themes/themes/falcon.toml"]
+#import = ["~/.config/alacritty/themes/themes/google.toml"]
+import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+#import = ["~/.config/alacritty/themes/themes/iterm.toml"]
+#import = ["~/.config/alacritty/themes/themes/monokai_charcoal.toml"]
+#import = ["~/.config/alacritty/themes/themes/seashells.toml"]
 
 [font]
 size = 12
