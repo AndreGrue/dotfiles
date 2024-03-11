@@ -54,6 +54,7 @@ alias rmr='rm -r'
 alias rmrf='rm -rf'
 
 alias reload='source ~/.bashrc'
+alias tslog='tail -f /var/log/syslog'
 
 alias x='exit'
 alias c='clear'
