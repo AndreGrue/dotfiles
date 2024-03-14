@@ -14,18 +14,18 @@ import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 #import = ["~/.config/alacritty/themes/themes/seashells.toml"]
 
 [font]
-size = 10
+size = 12
 
 [font.normal]
 #family = "UbuntuMono Nerd Font"
 family = "SauceCodePro Nerd Font"
 
 [window]
-#decorations = "none"
+decorations = "none"
 
 [window.padding]
-x = 10
-y = 10
+x = 5
+y = 5
 
 [keyboard]
 bindings = [
