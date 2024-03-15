@@ -23,7 +23,12 @@ brew install alacritty
 brew install eza bat ripgrep zoxide entr thefuck
 brew install mc ncdu btop htop
 brew install unzip gzip tar
+
 brew install curl wget rsync
+brew tap natesales/repo https://github.com/natesales/repo
+brew install q
+
+brew install xsv jq jc fx sd
 
 # fzf
 brew install fzf fd
@@ -38,7 +43,7 @@ brew install npm
 brew install neovim
 
 #
-brew install git lazygit
+brew install git git-delta lazygit
 
 #
 brew install lazydocker
