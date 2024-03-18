@@ -3,6 +3,7 @@ return {
   ---
   {
     "folke/persistence.nvim",
+    enabled = false,
     event = "BufReadPre",
     opts = {
       dir = vim.fn.expand(""),
@@ -18,4 +19,8 @@ return {
   -- {
   --   "tpope/vim-obsession",
   -- },
+  {
+    "rmagatti/auto-session",
+    opts = {},
+  },
 }
