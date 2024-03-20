@@ -1,6 +1,5 @@
 ---
 return {
-  ---
   {
     "m4xshen/hardtime.nvim",
     dependencies = {
@@ -8,9 +7,9 @@ return {
       "nvim-lua/plenary.nvim",
     },
     opts = {
-      enabled = true,
-      hint = true,
-      notification = true,
+      --  enabled = true,
+      --  hint = true,
+      --  notification = true,
     },
   },
 }
