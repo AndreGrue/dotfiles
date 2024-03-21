@@ -5,6 +5,7 @@ return {
   { "ellisonleao/gruvbox.nvim" },
   { "navarasu/onedark.nvim" },
   { "wittyjudge/gruvbox-material.nvim" },
+  { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
 
   -- Configure LazyVim to load gruvbox
   {
@@ -12,7 +13,8 @@ return {
     opts = {
       -- colorscheme = "gruvbox",
       -- colorscheme = "gruvbox-material",
-      colorscheme = "onedark",
+      -- colorscheme = "onedark",
+      colorscheme = "midnight",
       -- style = "darker",
     },
   },
