@@ -36,14 +36,19 @@ if command -v eza &>/dev/null; then
 	alias ll='eza -alhg'
 	alias tree='eza --tree'
 fi
-
 if command -v exa &>/dev/null; then
 	alias ls='exa'
 	alias ll='exa -alhg'
 	alias tree='exa --tree'
 fi
 
-alias cat='bat'
+# cat
+if command -v bat &>/dev/null; then
+	alias cat='bat'
+fi
+if command -v batcat &>/dev/null; then
+	alias cat='batcat'
+fi
 
 alias cd='z'
 alias ..="cd .." # one back
