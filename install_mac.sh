@@ -38,7 +38,7 @@ brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
-brew install npm
+brew install npm rust
 brew install neovim
 
 #

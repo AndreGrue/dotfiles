@@ -32,6 +32,7 @@ sudo apt-get install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
+sudo apt-get install cargo
 #brew install npm
 #curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 #sudo rm -rf /opt/nvim
