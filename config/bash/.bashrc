@@ -1,6 +1,7 @@
 #
 #  .bashrc
 #
+HISTIGNORE="ls:cd:pwd"
 
 #
 # environment variables
@@ -14,7 +15,8 @@ export SCRIPTS="$DOTFILES/scripts"
 PATH="${PATH:+${PATH}:}"$SCRIPTS":~/.local/bin:/opt/nvim-linux64/bin" # appending
 export PATH
 
-#
+export EDITOR=nvim
+
 #
 #
 eval "$(starship init bash)"
@@ -79,3 +81,14 @@ alias gc='git checkout'
 alias gb='git branch'
 alias gf='git fetch'
 alias lg='lazygit'
+
+###
+backup() { cp "$@" "$@".backup_$(date +%Y%m%d-%H%M%S); }
+extract() {
+	case $1 in
+	*.tar.gz) tar xvzf $1 ;;
+	*.tar.bz2) tar xvjf $1 ;;
+	*.zip) unzip $1 ;;
+	*) echo "unknown format!" ;;
+	esac
+}
