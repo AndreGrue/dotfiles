@@ -82,7 +82,9 @@ alias gb='git branch'
 alias gf='git fetch'
 alias lg='lazygit'
 
-###
+#
+#
+#
 backup() { cp "$@" "$@".backup_$(date +%Y%m%d-%H%M%S); }
 extract() {
 	case $1 in
