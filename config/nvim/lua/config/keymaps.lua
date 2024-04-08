@@ -8,5 +8,4 @@ local map = vim.keymap.set
 
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
--- map("n", "<C-x>", "<cmd>bd<cr>", { desc = "Delete Buffer" })
-map("n", "<C-x>", "<leader>bd", { desc = "Delete Buffer" })
+map("n", "<C-x>", "<cmd>bd<cr>", { desc = "Delete Buffer" })

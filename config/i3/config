@@ -1,0 +1,391 @@
+#
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+
+#################################################################################
+# Modifier
+# Set my variables.  Mod4 is windows button, 3 is caps lock, 2 is right ctrl
+#    Mod1 = Tab
+#    Mod4 = windows button
+# I use xmodmap to set this
+#
+set $mod Mod4
+set $exmod  Mod4
+set $winmod Mod3
+set $netmod Mod2
+
+set $MOD_ctrl   Control
+
+
+#################################################################################
+#
+#  workspace names
+#
+set $ws1    1:office
+set $ws2    2:file
+set $ws3    3:dev
+set $ws4    4:
+set $ws5    5:ros
+set $ws6    6:rx
+set $ws7    7:deeplearn
+set $ws8    8
+set $ws9    9
+set $ws10   10:i3
+
+
+#################################################################################
+# look
+
+# font
+#font pango:monospace 8
+font pango:DejaVu Sans Mono 9
+
+# class                 border  backgr. text    indicator
+#client.focused          #4c7899 #285577 #ffffff #ff0000
+#client.focused_inactive #eeee00 #5f676a #eeee00 #484e50
+#client.unfocused        #eeee00 #000000 #eeee00 #292d2e
+
+
+################################################################################
+#
+# startup
+#
+
+exec --no-startup-id /usr/bin/vmware-user
+exec --no-startup-id mintupdate
+
+# applets
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+
+exec --no-startup-id    "i3-msg 'workspace $ws2; exec thunar'"
+exec --no-startup-id    "i3-msg 'workspace $ws2; exec i3-sensible-terminal -e mc'"
+
+
+##########################
+# 1:office
+exec bash ~/.i3/startup_ws1.sh $ws1
+bindsym $mod+F1 exec bash ~/.i3/startup_ws1.sh $ws1
+
+##########################
+# 3:dev
+#exec bash ~/.i3/startup_ws3.sh $ws3
+bindsym $mod+F3 exec bash ~/.i3/startup_ws3.sh $ws3
+
+
+##########################
+# 4:
+#exec bash ~/.i3/startup_ws4.sh $ws4
+bindsym $mod+F4 exec bash ~/.i3/startup_ws4.sh $ws4
+
+##########################
+# 5:ros
+#exec bash ~/.i3/startup_ws5.sh $ws5
+bindsym $mod+F5 exec bash ~/.i3/startup_ws5.sh $ws5
+
+##########################
+# 6:rx
+#exec bash ~/.i3/startup_ws6.sh $ws6
+bindsym $mod+F6 exec bash ~/.i3/startup_ws6.sh $ws6
+
+##########################
+# 7:deeplearn
+#exec bash ~/.i3/startup_ws7.sh $ws7
+bindsym $mod+F7 exec bash ~/.i3/startup_ws7.sh $ws7
+
+##########################
+# 10:i3
+#exec bash ~/.i3/startup_ws10.sh $ws10
+#bindsym $mod+F10 exec bash ~/.i3/startup_ws10.sh $ws10
+
+
+
+################################################################################
+# SYSTEM: lock/logout/reboot/suspend/hibernate/shutdown
+
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $MOD_ctrl+Escape mode "$mode_system"
+
+
+#############################################################################################
+# I3WM Control:  Reload/Restart/Exit
+
+set $mode_i3 I3WM Control: (e) edit i3 config, (c) reload i3 config, (r) restart i3, (x) exit i3
+mode "$mode_i3" {
+    #bindsym e exec "i3-msg 'workspace $ws10; exec /usr/local/bin/idea ~/.i3'", mode "default"
+    bindsym e exec "i3-msg 'workspace $ws10; exec bash ~/.i3/startup_ws10.sh $ws10'", mode "default"
+    bindsym c reload, mode "default"
+    bindsym r restart, mode "default"
+    bindsym x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'", mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+i mode "$mode_i3"
+
+
+#############################################################################################
+# Monitor Control:
+
+exec --no-startup-id  xrandr --output Virtual1 --primary --auto
+
+set $mode_monitor Monitor Control: (h) HDMI on, (d) Internal display on
+mode "$mode_monitor" {
+    bindsym Shift+h  exec --no-startup-id xrandr --output HDMI1 --off, mode "default"
+    bindsym h        exec --no-startup-id xrandr --output HDMI1 --auto --left-of LVDS1, mode "default"
+    bindsym Shift+d  exec --no-startup-id xrandr --output LVDS1 --off, mode "default"
+    bindsym d        exec --no-startup-id xrandr --output LVDS1 --auto, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $MOD_ctrl+F1 mode "$mode_monitor"
+
+
+#############################################################################################
+# XXX Control:
+
+set $mode_xxx XXX Control: (t) tail sys.log, (l) less sys.log, (n) tail ntp.log, (q) ntp query, (p) ps, (n) start app, (m) stop app, (r) reboot, (f) localServiceInt
+mode "$mode_xxx" {
+    bindsym t  exec --no-startup-id i3-sensible-terminal -e  ssh xxx tail -f /var/log/sys.log, mode "default"
+    bindsym l  exec --no-startup-id i3-sensible-terminal -e  ssh xxx less /var/log/sys.log, mode "default"
+    bindsym n  exec --no-startup-id i3-sensible-terminal -e  ssh xxx tail -f /var/log/ntp.log, mode "default"
+
+    bindsym p  exec --no-startup-id i3-sensible-terminal -e  ssh xxx 'ps aux && sleep 20', mode "default"
+    bindsym q  exec --no-startup-id i3-sensible-terminal -e  ssh xxx '/home/current/usr/ntp/ntpq -p 127.0.0.1 && sleep 10', mode "default"
+
+    bindsym n  exec --no-startup-id i3-sensible-terminal -e  ssh xxx /home/current/usr/bin/.sh&, mode "default"
+    bindsym m  exec --no-startup-id i3-sensible-terminal -e  ssh xxx /home/current/usr/bin/.sh&, mode "default"
+
+    bindsym r  exec --no-startup-id i3-sensible-terminal -e  ssh xxx reboot, mode "default"
+
+
+
+    bindsym f  exec --no-startup-id exec firefox --new-window https://192.168.178.203, mode "default"
+
+
+
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $MOD_ctrl+F2 mode "$mode_xxx"
+
+
+
+################################################################################
+# dmenu
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id "dmenu_run -fn -*-fixed-*-*-*-*-10-*-*-*-*-*-*-* -nb '#303030' -nf '#8f8f8f' -sb '#303030' -sf '#ffaa00' -l 20"
+
+####################################################################################
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+################################################################################
+# programs
+bindsym $mod+Return     exec --no-startup-id    i3-sensible-terminal
+bindsym $mod+b          exec --no-startup-id    firefox
+bindsym $mod+m          exec --no-startup-id    evolution
+bindsym $mod+t          exec --no-startup-id    thunar
+bindsym $mod+n          exec --no-startup-id    i3-sensible-terminal -e mc
+bindsym $mod+k          exec --no-startup-id    /usr/local/bin/idea
+bindsym $mod+c          exec --no-startup-id    /usr/local/bin/clion
+bindsym $mod+u          exec --no-startup-id    wine '/home/grueandr/.wine/drive_c/Program Files (x86)/Sparx Systems/EA12/EA.exe'
+bindsym $mod+ü          exec --no-startup-id    wine '/home/grueandr/.wine/drive_c/Program Files (x86)/Sparx Systems/EA10new/EA.exe'
+
+
+assign [class="Chromium"] 1:office
+assign [class="Evolution"] 1:office
+assign [class="Thunar"] 2:file
+assign [class="Xfce4-terminal" instance="mc"] 2:file
+#assign [class="jetbrains-idea-ce"] 3:dev
+
+
+# Screen Shots
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Bilder/'
+bindsym Control+Print exec gnome-screenshot -i
+
+
+################################################################################
+# audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q set Master 3%- unmute
+bindsym XF86AudioMute        exec --no-startup-id amixer -D pulse -q set Master toggle
+
+
+################################################################################
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+#set $up l
+#set $down k
+#set $left j
+#set $right semicolon
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+
+################################################################################
+# focus
+
+# change focus
+#bindsym $mod+$left focus left
+#bindsym $mod+$down focus down
+#bindsym $mod+$up focus up
+#bindsym $mod+$right focus right
+bindsym Mod1+Tab focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+#bindsym $mod+Shift+$left move left
+#bindsym $mod+Shift+$down move down
+#bindsym $mod+Shift+$up move up
+#bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+###############################################################################
+#
+
+# split in horizontal orientation
+bindsym $mod+h split h
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+####################################################################################
+# workspace
+
+#move
+bindsym $mod+Control+Left    move workspace to output left
+bindsym $mod+Control+Down    move workspace to output down
+bindsym $mod+Control+Up      move workspace to output up
+bindsym $mod+Control+Right   move workspace to output right
+
+
+# default layout
+#workspace_layout default|stacking|tabbed
+workspace_layout tabbed
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+
+#############################################################################################
+# resize
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window?s width.
+        # Pressing right will grow the window?s width.
+        # Pressing up will shrink the window?s height.
+        # Pressing down will grow the window?s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+##################################################################################
+#
+bar {
+        tray_output primary
+
+        #status_command i3blocks
+        #status_command i3status
+        status_command ~/.i3/myi3status.sh
+
+      	font pango:DejaVu Sans Mono 9
+
+}
+
