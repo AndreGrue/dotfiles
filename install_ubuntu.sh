@@ -4,8 +4,14 @@
 # font
 # https://www.nerdfonts.com/font-downloads
 #
-#brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
-#brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-font
+FONTPKG=SourceCodePro.zip
+FONTPATH=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0
+wget -P ~/.local/share/fonts $FONTPATH\$FONTPKG \
+&& cd ~/.local/share/fonts \
+&& unzip $FONTPKG \
+&& rm $FONTPKG \
+&& fc-cache -fv
+
 
 # common
 sudo apt install exa bat ripgrep zoxide entr thefuck
@@ -32,11 +38,15 @@ sudo apt-get install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # neovim
-sudo apt-get install cargo
-#brew install npm
-#curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-#sudo rm -rf /opt/nvim
-#sudo tar -C /opt -xzf nvim-linux64.tar.gz
+sudo apt-get install cargo npm
+cargo install tree-sitter-cli
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+#sudo add-apt-repository ppa:neovim-ppa/unstable
+#sudo apt-get update
+#sudo apt-get install neovim
+
 
 # git
 #sudo add-apt-repository ppa:lazygit-team/release
