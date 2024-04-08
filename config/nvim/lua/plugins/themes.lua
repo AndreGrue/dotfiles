@@ -14,7 +14,7 @@ return {
       -- colorscheme = "gruvbox",
       -- colorscheme = "gruvbox-material",
       -- colorscheme = "onedark",
-      colorscheme = "midnight",
+      -- colorscheme = "midnight",
       -- style = "darker",
     },
   },
