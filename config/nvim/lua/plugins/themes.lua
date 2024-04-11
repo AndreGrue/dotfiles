@@ -9,7 +9,7 @@ return {
 
   { "rktjmp/lush.nvim" },
   { "andregrue/minimal_high_contrast.nvim", lazy = false, priority = 1000 },
-  { dir = "~/workspace/minimal_high_contrast.nvim", lazy = true },
+  -- { dir = "~/workspace/minimal_high_contrast.nvim", lazy = true },
 
   -- Configure LazyVim to load gruvbox
   {
