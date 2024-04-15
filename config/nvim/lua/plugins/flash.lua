@@ -4,7 +4,8 @@
 return {
   {
     "folke/flash.nvim",
-    event = "verylazy",
+    enabled = false,
+    -- event = "verylazy",
     opts = {},
   },
 }
