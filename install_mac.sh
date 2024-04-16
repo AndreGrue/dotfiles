@@ -41,7 +41,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 brew install npm rust
 brew install neovim
 
-#
+# git
 brew install git git-delta lazygit
 
 #
