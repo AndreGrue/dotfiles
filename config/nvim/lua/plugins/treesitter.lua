@@ -25,6 +25,8 @@ return {
         "markdown_inline",
         "yaml",
         "json",
+        "json5",
+        "jsonc",
       },
     },
   },
