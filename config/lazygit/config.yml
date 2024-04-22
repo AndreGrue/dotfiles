@@ -1,4 +1,3 @@
-fontSize: 8
 os:
   editCommand: "floaterm"
 gui:
