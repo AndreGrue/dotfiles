@@ -14,7 +14,7 @@
 #
 brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
 brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-font
-brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-ont
 
 # terminal
 brew install starship
