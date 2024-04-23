@@ -7,9 +7,13 @@ return {
   -- { "wittyjudge/gruvbox-material.nvim" },
   { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
 
-  { "rktjmp/lush.nvim" },
-  -- { "andregrue/minimal_high_contrast.nvim", lazy = false, priority = 1000 },
-  { dir = "~/workspace/minimal_high_contrast.nvim", lazy = false, priority = 1000 },
+  {
+    "andregrue/minimal_high_contrast.nvim",
+    -- dir = "~/workspace/minimal_high_contrast.nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = { "rktjmp/lush.nvim" },
+  },
 
   -- Configure LazyVim to load gruvbox
   {
