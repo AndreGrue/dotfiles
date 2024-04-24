@@ -1,4 +1,8 @@
 ---
+-- stylua: ignore
+if true then return {} end
+
+--
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -8,7 +12,11 @@ return {
     "nvim-telescope/telescope-media-files.nvim",
 
     keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files Telescope" },
+      {
+        "<leader>ff",
+        "<cmd>Telescope find_files<cr>",
+        desc = "Find Files Telescope",
+      },
     },
     opts = {
       pickers = {
