@@ -85,7 +85,7 @@ alias lg='lazygit'
 #
 #
 #
-backup() { cp "$@" "$@".backup_$(date +%Y%m%d-%H%M%S); }
+backup() { cp -r "$@" "$@".backup_$(date +%Y%m%d-%H%M%S); }
 extract() {
 	case $1 in
 	*.tar.gz) tar xvzf $1 ;;
