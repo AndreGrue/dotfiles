@@ -13,6 +13,9 @@ import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 #import = ["~/.config/alacritty/themes/themes/monokai_charcoal.toml"]
 #import = ["~/.config/alacritty/themes/themes/seashells.toml"]
 
+#[env]
+#term = "xterm-256color"
+
 [font]
 size = 12.5
 
@@ -29,11 +32,9 @@ y = 5
 
 [keyboard]
 bindings = [
-  { key = "C",  mods = "Alt",           chars = "\u001bc"                       },
-  { key = "H",  mods = "Alt",           chars = "\u001bh"                       },
-  { key = "J",  mods = "Alt",           chars = "\u001bj"                       },
-  { key = "K",  mods = "Alt",           chars = "\u001bk"                       },
-  { key = "L",  mods = "Alt",           chars = "\u001bl"                       },
+  { key = "C", mods = "Alt", chars = "\u001bc" },
+  { key = "H", mods = "Alt", chars = "\u001bh" },
+  { key = "J", mods = "Alt", chars = "\u001bj" },
+  { key = "K", mods = "Alt", chars = "\u001bk" },
+  { key = "L", mods = "Alt", chars = "\u001bl" },
 ]
-
-
