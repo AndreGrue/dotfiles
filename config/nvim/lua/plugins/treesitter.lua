@@ -19,7 +19,6 @@ return {
         "lua",
         "query",
         "regex",
-        "tsx",
         "vim",
         "markdown",
         "markdown_inline",
