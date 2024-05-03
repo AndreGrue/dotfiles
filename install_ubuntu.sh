@@ -4,7 +4,7 @@
 # font
 # https://www.nerdfonts.com/font-downloads
 #
-FONTPKG=SourceCodePro.zip
+FONTPKG=SauceCodePro.zip
 FONTPATH=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0
 wget -P ~/.local/share/fonts $FONTPATH\$FONTPKG &&
 	cd ~/.local/share/fonts &&
