@@ -8,6 +8,7 @@ export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"/alacritty
 mkdir -p "$XDG_CONFIG_HOME"/tmux
 mkdir -p "$XDG_CONFIG_HOME"/starship
+mkdir -p "$XDG_CONFIG_HOME"/lazygit
 
 #
 # addons
