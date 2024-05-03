@@ -40,7 +40,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #sudo add-apt-repository ppa:neovim-ppa/unstable
 #sudo apt-get update
 #sudo apt-get install neovim
-sudo apt-get install cargo npm chafa imagemagick
+sudo apt-get install cargo chafa imagemagick
 cargo install tree-sitter
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
