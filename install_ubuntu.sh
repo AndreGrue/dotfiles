@@ -6,7 +6,7 @@
 #
 FONTPKG=SauceCodePro.zip
 FONTPATH=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0
-wget -P ~/.local/share/fonts $FONTPATH\$FONTPKG &&
+wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 	cd ~/.local/share/fonts &&
 	unzip $FONTPKG &&
 	rm $FONTPKG &&
