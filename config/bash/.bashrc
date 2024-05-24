@@ -12,19 +12,20 @@ export WORKSPACE="$HOME"/workspace
 export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 
-PATH="${PATH:+${PATH}:}"$SCRIPTS":~/.local/bin:~/.cargo/bin:/opt/nvim-linux64/bin" # appending
+PATH="${PATH:+${PATH}:}$SCRIPTS:$HOME/.local/bin:$HOME/.cargo/bin:/opt/nvim-linux64/bin" # appendgg
 export PATH
 
 export EDITOR=nvim
 
 #
 #
+source "$HOME/.bash_completion/alacritty"
 eval "$(starship init bash)"
 eval "$(thefuck --alias)"
 eval "$(zoxide init bash)"
 
 # FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
