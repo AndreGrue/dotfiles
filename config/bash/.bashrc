@@ -1,7 +1,15 @@
 #
 #  .bashrc
 #
+
+#
+# history
+#
 HISTIGNORE="ls:cd:pwd"
+HISTFILE=~/.bash_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 #
 # environment variables
@@ -29,6 +37,7 @@ eval "$(zoxide init bash)"
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+source <(fzf --bash)
 
 #
 #  alias
