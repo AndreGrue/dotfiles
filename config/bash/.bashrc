@@ -9,7 +9,7 @@ HISTIGNORE="ls:cd:pwd"
 HISTFILE=~/.bash_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+set histappend
 
 #
 # environment variables
