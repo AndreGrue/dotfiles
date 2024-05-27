@@ -31,9 +31,9 @@ curl -sS https://starship.rs/install.sh | sh
 # alacritty
 sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt install alacritty
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
 mkdir -p ~/.bash_completion
-cp /usr/share/bash-completions/alacritty ~/.bash_completion/alacritty
+cp /usr/share/bash-completion/completions/alacritty ~/.bash_completion/alacritty
 
 # tmux
 sudo apt-get install tmux

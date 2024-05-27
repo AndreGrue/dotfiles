@@ -19,7 +19,7 @@ brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-ont
 # terminal
 brew install starship
 brew install alacritty
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
 mkdir -p ~/.bash_completion
 cp /Applications/Alacritty.app/Contents/Resources/completions/alacritty.bash ~/.bash_completion/alacritty
 
