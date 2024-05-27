@@ -31,6 +31,7 @@ curl -sS https://starship.rs/install.sh | sh
 # alacritty
 sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt install alacritty
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 mkdir -p ~/.bash_completion
 cp /usr/share/bash-completions/alacritty ~/.bash_completion/alacritty
 
