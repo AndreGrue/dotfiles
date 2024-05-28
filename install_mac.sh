@@ -32,6 +32,7 @@ brew install curl wget rsync
 brew tap natesales/repo https://github.com/natesales/repo
 brew install q
 brew install xsv jq jc fx sd
+brew install imagemagick
 
 # fzf
 brew install fzf fd
@@ -41,7 +42,12 @@ $(brew --prefix)/opt/fzf/install
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# latex
+brew install mactex
 # neovim
+brew install luarocks
+luarocks install magick
+
 brew install npm rust
 brew install neovim
 
