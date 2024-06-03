@@ -17,7 +17,7 @@ sudo apt install exa bat ripgrep zoxide entr thefuck
 sudo apt install mc ncdu btop htop
 sudo apt install curl wget rsync
 sudo apt install unzip gzip tar
-sudo apt install imagemagick libmagickwand-dev libgraphicsmagick1-dev
+sudo apt install imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -50,7 +50,9 @@ sudo apt-get install bibtex
 sudo apt-get install luarocks
 luarocks install magick
 
-sudo apt-get install cargo chafa
+sudo apt-get install cargo
+cargo install tree-sitter-cli
+
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
