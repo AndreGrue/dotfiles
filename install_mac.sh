@@ -48,7 +48,10 @@ brew install mactex
 brew install luarocks
 luarocks install magick
 
-brew install npm rust
+brew install npm
+npm install -g neovim
+
+brew install rust
 brew install neovim
 
 # git
