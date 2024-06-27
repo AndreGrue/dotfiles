@@ -1,3 +1,7 @@
+---
+-- stylua: ignore
+if true then return {} end
+---
 return {
   {
     "vhyrro/luarocks.nvim",
