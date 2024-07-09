@@ -30,3 +30,33 @@ map("n", "<leader>t", "<cmd>terminal<cr>", { desc = "Open terminal" })
 -- map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
 -- map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+
+-----------------------------------------------------------------------------------
+--
+-- build scripts
+--
+
+--
+-- Function to send commands to the terminal or open a new one if none is found
+--
+local function send_command_to_terminal(cmd)
+  -- Iterate over all buffers to find a terminal buffer
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_get_option(buf, "buftype") == "terminal" then
+      -- Send the command to the terminal buffer
+      vim.fn.chansend(vim.api.nvim_buf_get_var(buf, "terminal_job_id"), cmd .. "\n")
+      return
+    end
+  end
+
+  -- If no terminal buffer is found, open a new terminal and run the command
+  -- vim.cmd("split term://" .. cmd)
+  vim.cmd("split")
+  vim.cmd("term")
+  vim.cmd("resize 10")
+  send_command_to_terminal(cmd)
+end
+
+map("n", "<leader>m", "", { noremap = true, silent = true, desc = "make" })
+-- stylua: ignore 
+map("n", "<leader>mn", function() send_command_to_terminal("/bin/bash ./test.sh") end, { noremap = true, silent = true, desc = "run test" })
