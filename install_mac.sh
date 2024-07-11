@@ -59,6 +59,7 @@ brew install mactex
 # neovim
 brew install luarocks
 luarocks install magick
+luarocks --local --lua-version=5.1 install magick
 
 brew install npm
 npm install -g neovim
