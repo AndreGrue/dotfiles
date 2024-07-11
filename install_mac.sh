@@ -18,10 +18,11 @@ brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-ont
 
 # terminal
 brew install starship
-brew install alacritty
-curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
-mkdir -p ~/.bash_completion
-cp /Applications/Alacritty.app/Contents/Resources/completions/alacritty.bash ~/.bash_completion/alacritty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# brew install alacritty
+# curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
+# mkdir -p ~/.bash_completion
+# cp /Applications/Alacritty.app/Contents/Resources/completions/alacritty.bash ~/.bash_completion/alacritty
 
 # commandline tools
 brew install eza bat ripgrep zoxide entr thefuck
