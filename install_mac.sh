@@ -8,6 +8,7 @@
 #echo $(brew --prefix)/bin/bash | sudo tee -a /private/etc/shells
 #chsh -s $(brew --prefix)/bin/bash
 
+#############################################################################################
 #
 # font
 # https://www.nerdfonts.com/font-downloads
@@ -16,14 +17,28 @@ brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
 brew tap homebrew/cask-fonts && brew install --cask font-sauce-code-pro-nerd-font
 brew tap homebrew/cask-fonts && brew install --cask font-ubuntu-nerd-ont
 
+#############################################################################################
+#
 # terminal
+#
 brew install starship
+# kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# alacritty
 # brew install alacritty
 # curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
 # mkdir -p ~/.bash_completion
 # cp /Applications/Alacritty.app/Contents/Resources/completions/alacritty.bash ~/.bash_completion/alacritty
+# zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# tmux
+brew install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#############################################################################################
+#
 # commandline tools
 brew install eza bat ripgrep zoxide entr thefuck
 brew install mc ranger ncdu
@@ -38,10 +53,6 @@ brew install imagemagick
 # fzf
 brew install fzf fd
 $(brew --prefix)/opt/fzf/install
-
-# tmux
-brew install tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # latex
 brew install mactex

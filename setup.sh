@@ -26,6 +26,7 @@ cp -r ${TMPDIR}/skins "$HOME"/.local/share/mc
 # symbolic links
 #
 ln -sf "$PWD/config/zsh/zshrc" "$HOME"/.zshrc
+ln -sf "$PWD/config/zsh/zprofile" "$HOME"/.zprofile
 ln -sf "$PWD/config/bash/.bash_profile" "$HOME"/.bash_profile
 ln -sf "$PWD/config/bash/.bashrc" "$HOME"/.bashrc
 ln -sf "$PWD/config/git/.gitconfig" "$HOME"/.gitconfig

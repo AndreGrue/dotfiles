@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#############################################################################################
 #
 # font
 # https://www.nerdfonts.com/font-downloads
@@ -12,6 +13,7 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 	rm $FONTPKG &&
 	fc-cache -fv
 
+#############################################################################################
 # common
 sudo apt install exa bat ripgrep zoxide entr thefuck
 sudo apt install mc ncdu btop htop
@@ -26,9 +28,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 sudo apt install fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
 
+#############################################################################################
+#
+# terminal
+#
+
 # starship
 curl -sS https://starship.rs/install.sh | sh
-
 # kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 # alacritty
@@ -37,10 +43,15 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 # curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
 # mkdir -p ~/.bash_completion
 # cp /usr/share/bash-completion/completions/alacritty ~/.bash_completion/alacritty
+# zsh
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # tmux
 sudo apt-get install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#############################################################################################
 
 # latex
 sudo apt-get install bibtex
