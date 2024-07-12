@@ -58,5 +58,7 @@ local function send_command_to_terminal(cmd)
 end
 
 map("n", "<leader>m", "", { noremap = true, silent = true, desc = "make" })
--- stylua: ignore 
+-- stylua: ignore
+map("n", "<leader>mc", function() send_command_to_terminal("cmake . && cmake --build .") end, { noremap = true, silent = true, desc = "cmake" })
+-- stylua: ignore
 map("n", "<leader>mn", function() send_command_to_terminal("/bin/bash ./test.sh") end, { noremap = true, silent = true, desc = "run test" })
