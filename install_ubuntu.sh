@@ -15,15 +15,15 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 
 #############################################################################################
 # common
-sudo apt install exa bat ripgrep zoxide entr thefuck
+sudo apt install fzf exa bat ripgrep zoxide entr thefuck
 sudo apt install mc ncdu btop htop
 sudo apt install curl wget rsync
 sudo apt install unzip gzip tar
 sudo apt install imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
 
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+# # fzf
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# ~/.fzf/install
 # fd
 sudo apt install fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
