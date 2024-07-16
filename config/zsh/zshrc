@@ -63,14 +63,14 @@ if command -v batcat &>/dev/null; then
 fi
 
 alias cd='z'
-alias ..="cd .." # one back
-alias ~='cd ~'   # cd home dir
+alias ..="z .." # one back
+alias ~='z ~'   # cd home dir
 alias -- -='z -' # cd last dir in
 
 alias rmr='rm -r'
 alias rmrf='rm -rf'
 
-alias reload='source ~/.bashrc'
+alias reload='source ~/.zshrc'
 alias tslog='tail -f /var/log/syslog'
 
 alias x='exit'

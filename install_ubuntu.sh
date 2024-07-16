@@ -8,7 +8,10 @@
 FONTPKG=SourceCodePro.zip
 FONTPATH=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1
 wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
-	cd ~/.local/share/fonts && unzip $FONTPKG && rm $FONTPKG && fc-cache -fv
+	cd ~/.local/share/fonts &&
+	unzip $FONTPKG &&
+	rm $FONTPKG &&
+	fc-cache -fv
 
 #############################################################################################
 # common
@@ -65,7 +68,7 @@ sudo apt-get install bibtex
 #sudo apt-get update
 #sudo apt-get install neovim
 sudo apt-get install luarocks
-luarocks install magick
+sudo luarocks install magick
 
 sudo apt-get install cargo
 cargo install tree-sitter-cli
