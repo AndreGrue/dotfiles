@@ -25,6 +25,7 @@ cp -r ${TMPDIR}/skins "$HOME"/.local/share/mc
 #
 # symbolic links
 #
+ln -sf "$PWD/config/misc/markdownlint-cli2.yaml" "$HOME"/.markdownlint-cli2.yaml
 ln -sf "$PWD/config/zsh/zshrc" "$HOME"/.zshrc
 ln -sf "$PWD/config/zsh/zprofile" "$HOME"/.zprofile
 # ln -sf "$PWD/config/bash/.bash_profile" "$HOME"/.bash_profile
