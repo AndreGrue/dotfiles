@@ -1,22 +1,24 @@
 [user]
-    name = André Grüttner
-    email = a.gruettner@web.de
+  name = André Grüttner
+  email = a.gruettner@web.de
 [core]
-    autocrlf = input
-    pager = delta
+  autocrlf = input
+  pager = delta
 [pull]
   rebase = false  # prefer merge over rebase if conflicts by pull
-
 [interactive]
-    diffFilter = delta --color-only
-
+  diffFilter = delta --color-only
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    side-by-side = true
-
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  side-by-side = true
 [merge]
-    conflictstyle = diff3
-
+  conflictstyle = diff3
 [diff]
-    colorMoved = default
+  colorMoved = default
+[alias]
+  cl = clone
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
