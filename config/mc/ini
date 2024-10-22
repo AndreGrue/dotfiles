@@ -93,6 +93,7 @@ color_terminals=
 screen=
 xterm-256color=
 screen-256color=
+xterm-kitty=
 
 [Layout]
 command_prompt=true
@@ -100,7 +101,7 @@ free_space=true
 horizontal_equal=true
 horizontal_split=false
 keybar_visible=true
-left_panel_size=108
+left_panel_size=120
 menubar_visible=true
 message_visible=false
 output_lines=0
@@ -155,6 +156,6 @@ tab_size=8
 
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
-Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
 Find rejects after patching=find . -name \\*.rej -print
+Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
 Modified git files=git ls-files --modified
