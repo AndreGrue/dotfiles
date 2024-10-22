@@ -56,6 +56,9 @@ $(brew --prefix)/opt/fzf/install
 
 # latex
 brew install mactex
+pipx install pylatexenc
+pipx install jupytext
+
 # neovim
 brew install luarocks
 luarocks install magick

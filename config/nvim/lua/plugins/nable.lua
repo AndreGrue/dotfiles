@@ -2,21 +2,40 @@
 -- if true then return {} end
 
 return {
+  --
   {
-    "jbyuki/nabla.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
+    enabled = true,
+    -- opts = {
+    --   latex = { enabled = false },
+    -- },
     -- config = function()
-    -- Enable virt text automatically for LaTeX and Markdown files
-    -- vim.api.nvim_create_autocmd({ "FileType" }, {
-    --   pattern = { "tex", "markdown" },
-    --   callback = function()
-    --     require("nabla").enable_virt({
-    --       autogen = true, -- auto-regenerate ASCII art when exiting insert mode
-    --       silent = true, -- silents error messages
-    --     })
+    -- require("render-markdown").setup({
+    -- latex = { enabled = false },
+    -- latex = {
+    --   parse = function()
+    --     return {}
     --   end,
+    -- },
     -- })
     -- end,
+  },
+
+  {
+    "jbyuki/nabla.nvim",
+    enabled = false,
     config = function()
+      -- Enable virt text automatically for LaTeX and Markdown files
+      vim.api.nvim_create_autocmd({ "FileType" }, {
+        pattern = { "tex", "markdown" },
+        callback = function()
+          require("nabla").enable_virt({
+            autogen = true, -- auto-regenerate ASCII art when exiting insert mode
+            silent = true, -- silents error messages
+          })
+        end,
+      })
+ 
       -- Enable virtual text on startup
       -- require("nabla").enable_virt({
         -- autogen = true, -- auto-regenerate ASCII art when exiting insert mode

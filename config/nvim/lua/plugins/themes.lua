@@ -5,7 +5,8 @@ return {
   -- { "ellisonleao/gruvbox.nvim" },
   -- { "navarasu/onedark.nvim" },
   -- { "wittyjudge/gruvbox-material.nvim" },
-  { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
+  -- { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
+  -- { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} },
 
   {
     "andregrue/minimal_high_contrast.nvim",
@@ -19,6 +20,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "tokyonight",
       colorscheme = "minimal_high_contrast",
       -- colorscheme = "gruvbox",
       -- colorscheme = "gruvbox-material",
