@@ -27,14 +27,23 @@ return {
     },
   },
   config = function(_, opts)
-    --
-    --
     vim.o.foldcolumn = "1" -- '0' is not bad
     vim.o.foldlevel = 20 -- Using ufo provider need a large value, feel free to decrease the value
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
     vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+    vim.o.foldmethod = "expr"
+    vim.o.foldexpr = "nvim_treesitter#foldexpr()"
     --
+    -- Set foldmethode for markdown files
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "markdown",
+      callback = function()
+        vim.opt_local.foldmethod = "expr"
+        vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+      end,
+    })
+
     --
     local handler = function(virtText, lnum, endLnum, width, truncate)
       local newVirtText = {}
@@ -77,12 +86,7 @@ return {
         local bufnr = vim.api.nvim_win_get_buf(winid)
         local keys = { "a", "i", "o", "A", "I", "O", "c", "s" }
         for _, k in ipairs(keys) do
-          vim.keymap.set(
-            "n",
-            k,
-            "<CR>" .. k,
-            { remap = true, buffer = bufnr, nowait = true }
-          )
+          vim.keymap.set("n", k, "<CR>" .. k, { remap = true, buffer = bufnr, nowait = true })
         end
       else
         vim.lsp.buf.hover()
