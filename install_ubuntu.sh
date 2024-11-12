@@ -63,6 +63,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # latex
 sudo apt-get install -y bibtex
 pipx install pylatexenc
+pipx install jupytext
 
 # neovim
 #sudo add-apt-repository ppa:neovim-ppa/unstable

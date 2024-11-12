@@ -10,14 +10,14 @@ return {
     --   latex = { enabled = false },
     -- },
     -- config = function()
-    -- require("render-markdown").setup({
-    -- latex = { enabled = false },
-    -- latex = {
-    --   parse = function()
-    --     return {}
-    --   end,
-    -- },
-    -- })
+    --   require("render-markdown").setup({
+    --     -- latex = { enabled = false },
+    --     latex = {
+    --       parse = function()
+    --         return {}
+    --       end,
+    --     },
+    --   })
     -- end,
   },
 
@@ -35,7 +35,7 @@ return {
           })
         end,
       })
- 
+
       -- Enable virtual text on startup
       -- require("nabla").enable_virt({
         -- autogen = true, -- auto-regenerate ASCII art when exiting insert mode
