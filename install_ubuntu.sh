@@ -61,6 +61,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #############################################################################################
 
 # latex
+sudo apt-get install texlive-latex-base
 sudo apt-get install -y bibtex
 pipx install pylatexenc
 pipx install jupytext
@@ -80,12 +81,13 @@ sudo npm install -g neovim
 sudo npm install prettier --global
 sudo npm install markdownlint-cli2 --global
 sudo npm install markdown-toc --global
+sudo npm install -g @mermaid-js/mermaid-cli
 
 sudo apt-get install -y python3-pip python3-venv python3-neovim
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
 # git
 #sudo add-apt-repository ppa:lazygit-team/release
