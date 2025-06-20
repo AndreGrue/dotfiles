@@ -63,9 +63,9 @@ if command -v batcat &>/dev/null; then
 fi
 
 alias cd='z'
-alias ..="z .." # one back
-alias ~='z ~'   # cd home dir
-alias -- -='z -' # cd last dir in
+alias ..="cd .." # one back
+alias ~='cd ~'   # cd home dir
+alias -- -='cd -' # cd last dir in
 
 alias rmr='rm -r'
 alias rmrf='rm -rf'
