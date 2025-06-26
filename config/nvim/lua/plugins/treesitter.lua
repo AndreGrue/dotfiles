@@ -14,6 +14,7 @@ return {
         "cpp",
         "cmake",
         "make",
+        "pascal",
         "python",
         "latex",
         "lua",
