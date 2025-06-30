@@ -26,7 +26,7 @@ return {
       opts.formatters = vim.tbl_deep_extend("force", opts.formatters or {}, {
         ptop = {
           command = "ptop",
-          args = { "$FILENAME", "$FILENAME" },
+          args = { "-c", "~/workspace/dotfiles/config/pascal/ptop.cfg", "$FILENAME", "$FILENAME" },
           stdin = false,
           condition = function(ctx)
             return vim.fn.executable("ptop") == 1
