@@ -19,6 +19,27 @@ return {
       },
     },
   },
+  {
+    "stevearc/conform.nvim",
+    opts = function(_, opts)
+      -- Register custom formatter
+      opts.formatters = vim.tbl_deep_extend("force", opts.formatters or {}, {
+        ptop = {
+          command = "ptop",
+          args = { "$FILENAME", "$FILENAME" },
+          stdin = false,
+          condition = function(ctx)
+            return vim.fn.executable("ptop") == 1
+          end,
+        },
+      })
+
+      -- Assign it to Pascal files
+      opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft or {}, {
+        pascal = { "ptop" },
+      })
+    end,
+  },
   -- {
   --   "alaviss/nim.nvim", -- basic Pascal-like TS syntax
   --   ft = { "pascal" },
