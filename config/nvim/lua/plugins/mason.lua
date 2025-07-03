@@ -1,7 +1,7 @@
 return {
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "bash-language-server",
@@ -27,7 +27,8 @@ return {
         "texlab",
         "latexindent",
         "bibtex-tidy",
-        "markdownlint",
+        "markdownlint-cli2",
+        "markdown-toc",
         "marksman",
         "pyright",
         "pyment",
