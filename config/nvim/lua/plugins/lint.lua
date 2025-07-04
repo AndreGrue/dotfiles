@@ -1,3 +1,6 @@
+-- stylua: ignore
+if true then return {} end
+
 -- ~/.config/nvim/lua/plugins/lint.lua
 local HOME = os.getenv("HOME")
 return {

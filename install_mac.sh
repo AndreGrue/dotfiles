@@ -66,7 +66,7 @@ luarocks --local --lua-version=5.1 install magick
 
 brew install npm
 npm install -g neovim
-npm install -g markdownlint-cli markdown-toc
+npm install -g markdownlint-cli2 markdown-toc prettier
 
 brew install rust
 brew install neovim
