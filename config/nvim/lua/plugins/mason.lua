@@ -38,6 +38,8 @@ return {
         "yamlfix",
         "yamlfmt",
         "yamllint",
+        "lemminx",
+        "xmlformatter",
       },
     },
   },

@@ -27,6 +27,7 @@ return {
         "json",
         "json5",
         "jsonc",
+        "xml",
         "css",
         "norg",
         "scss",
