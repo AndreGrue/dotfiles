@@ -14,8 +14,8 @@ map("i", "jj", "<ESC>", { noremap = true, desc = "Leave insert mode" })
 --
 -- Buffer Mappings
 --
-map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+-- map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+-- map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 -- map("n", "<C-x>", "<cmd>bd<cr>", { desc = "Delete Buffer" })
 
 
