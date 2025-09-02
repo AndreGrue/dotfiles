@@ -74,7 +74,7 @@ sudo apt-get install -y luarocks
 sudo luarocks install magick
 
 sudo apt-get install -y cargo
-cargo install tree-sitter-cli
+cargo install tree-sitter-cli gitlab-ci-ls
 
 sudo apt-get install -y npm
 sudo npm install -g neovim

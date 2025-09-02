@@ -38,6 +38,7 @@ return {
         "yamlfix",
         "yamlfmt",
         "yamllint",
+        "gitlab-ci-ls",
         "lemminx",
         "xmlformatter",
       },
