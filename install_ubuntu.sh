@@ -73,7 +73,9 @@ pipx install jupytext
 sudo apt-get install -y luarocks
 sudo luarocks install magick
 
-sudo apt-get install -y cargo
+# sudo apt-get install -y cargo
+sudo apt-get install -y rustup
+rustup default stable
 cargo install tree-sitter-cli gitlab-ci-ls
 
 sudo apt-get install -y npm
