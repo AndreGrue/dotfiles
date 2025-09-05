@@ -56,7 +56,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # tmux
 sudo apt-get install -y tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+mkdir -p ~/.config/tmux/plugins/catppuccin
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
 
 #############################################################################################
 
@@ -73,7 +75,9 @@ pipx install jupytext
 sudo apt-get install -y luarocks
 sudo luarocks install magick
 
-sudo apt-get install -y cargo
+# sudo apt-get install -y cargo
+sudo apt-get install rustup
+rustup default stable
 cargo install tree-sitter-cli gitlab-ci-ls
 
 sudo apt-get install -y npm
