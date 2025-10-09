@@ -20,7 +20,7 @@ export WORKSPACE="$HOME"/workspace
 export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 
-PATH="${PATH:+${PATH}:}$SCRIPTS:$HOME/.local/bin:$HOME/.cargo/bin:/opt/nvim-linux64/bin"
+PATH="${PATH:+${PATH}:}$SCRIPTS:$HOME/.local/bin:$HOME/.cargo/bin:/opt/nvim-linux-x86_64/bin:/opt/nvim-macos-arm64/bin"
 export PATH
 
 export EDITOR=nvim

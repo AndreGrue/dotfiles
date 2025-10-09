@@ -18,5 +18,3 @@ if [ -r ~/.zshrc ]; then
   source ~/.zshrc
 fi
 
-xhost +local: &
-

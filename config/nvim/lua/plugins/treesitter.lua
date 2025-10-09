@@ -18,6 +18,7 @@ return {
         "python",
         "latex",
         "lua",
+        "rust",
         "query",
         "regex",
         "vim",

@@ -41,6 +41,7 @@ return {
         "gitlab-ci-ls",
         "lemminx",
         "xmlformatter",
+        "rust-analyzer",
       },
     },
   },
