@@ -52,7 +52,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo apt-get install -y tmux
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 mkdir -p ~/.config/tmux/plugins/catppuccin
-git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/captpuccin-tmux
 
 #############################################################################################
 # nvim
