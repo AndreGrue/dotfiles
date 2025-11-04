@@ -16,7 +16,7 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 # common
 sudo apt-get install -y eza bat ripgrep zoxide entr thefuck
 sudo apt-get install -y mc ncdu btop htop
-sudo apt-get install -y curl wget rsync
+sudo apt-get install -y curl wget rsync lynx
 sudo apt-get install -y unzip gzip tar
 sudo apt-get install -y imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
 
@@ -59,7 +59,7 @@ git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugin
 
 # latex
 sudo apt-get install texlive-latex-base
-sudo apt-get install -y bibtex
+sudo apt-get install -y bibtex biber latexmk
 pipx install pylatexenc
 pipx install jupytext
 
@@ -73,7 +73,7 @@ sudo apt-get install -y rustup
 rustup default stable
 rustup update
 rustup component add rust-analyzer
-cargo install tree-sitter-cli gitlab-ci-ls
+cargo install tree-sitter-cli gitlab-ci-ls ast-grep
 
 # node
 sudo apt-get install -y npm

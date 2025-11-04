@@ -44,7 +44,7 @@ brew install eza bat ripgrep zoxide entr thefuck
 brew install mc ranger ncdu
 brew install btop htop
 brew install unzip gzip tar
-brew install curl wget rsync
+brew install curl wget rsync lynx
 brew tap natesales/repo https://github.com/natesales/repo
 brew install q
 brew install xsv jq jc fx sd

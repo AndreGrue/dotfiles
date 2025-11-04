@@ -1,3 +1,5 @@
+-- stylua: ignore
+if true then return {} end
 --
 --  https://github.com/folke/noice.nvim
 --
