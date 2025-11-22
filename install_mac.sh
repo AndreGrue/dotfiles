@@ -52,6 +52,7 @@ brew install imagemagick
 
 ## file manager
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
+ya pkg add gosxrgxx/flexoki-dark
 
 # fzf
 brew install fzf fd

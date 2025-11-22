@@ -1,2 +1,4 @@
 %Users%andre%workspace%dotfiles.vim
 config/nvim/lazy-lock.json
+config/yazi/flavors
+config/yazi/package.toml
