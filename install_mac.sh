@@ -40,7 +40,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #############################################################################################
 #
 # commandline tools
-brew install eza bat ripgrep zoxide entr thefuck
+brew install eza bat ripgrep ast-grep zoxide entr thefuck
 brew install mc ranger ncdu
 brew install btop htop
 brew install unzip gzip tar
@@ -49,6 +49,9 @@ brew tap natesales/repo https://github.com/natesales/repo
 brew install q
 brew install xsv jq jc fx sd
 brew install imagemagick
+
+## file manager
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 
 # fzf
 brew install fzf fd
