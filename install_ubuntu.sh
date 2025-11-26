@@ -55,7 +55,7 @@ mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/captpuccin-tmux
 
 # file manager - yazi, see rust
-apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
+sudo apt-get -y install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
 
 #############################################################################################
 # nvim
@@ -76,7 +76,8 @@ sudo apt-get install -y rustup
 rustup default stable
 rustup update
 rustup component add rust-analyzer
-cargo install tree-sitter-cli gitlab-ci-ls ast-grep yazi
+cargo install tree-sitter-cli gitlab-ci-ls ast-grep
+cargo install --force yazi-build
 
 # node
 sudo apt-get install -y npm
