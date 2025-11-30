@@ -14,7 +14,7 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 
 #############################################################################################
 # common
-sudo pacman -S --noconfirm eza bat ripgrep zoxide entr thefuck fzf fd
+sudo pacman -S --noconfirm eza bat ripgrep ast-grep zoxide entr thefuck fzf fd
 sudo pacman -S --noconfirm mc ncdu btop htop
 sudo pacman -S --noconfirm curl wget rsync lynx
 sudo pacman -S --noconfirm unzip gzip tar
@@ -55,12 +55,11 @@ sudo pacman -S --noconfirm luarocks
 # sudo luarocks install magick
 
 # rust
-sudo apt-get purge -y tree-sitter
-sudo apt-get install -y rustup
+sudo pacman -S --noconfirm rustup
 rustup default stable
 rustup update
-rustup component add rust-analyzer
-cargo install tree-sitter-cli gitlab-ci-ls ast-grep
+# rustup component add rust-analyzer
+# cargo install tree-sitter-cli gitlab-ci-ls
 
 # node
 sudo apt-get install -y npm
