@@ -29,7 +29,7 @@ export EDITOR=nvim
 #
 #
 #
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 # eval "$(thefuck --alias)"
 # eval "$(zoxide init zsh)"
 #[ -f "$HOME"/.fzf.zsh ] && source "$HOME"/.fzf.zsh
@@ -105,7 +105,14 @@ extract() {
 	esac
 }
 
-# yazi 
+cpr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"
+}
+mvr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"
+}
+
+# yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
