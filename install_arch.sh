@@ -58,16 +58,16 @@ sudo pacman -S --noconfirm luarocks
 sudo pacman -S --noconfirm rustup
 rustup default stable
 rustup update
-# rustup component add rust-analyzer
-# cargo install tree-sitter-cli gitlab-ci-ls
+rustup component add rust-analyzer
+cargo install tree-sitter-cli gitlab-ci-ls
 
 # node
-sudo apt-get install -y npm
-sudo npm install -g neovim
-sudo npm install prettier --global
-sudo npm install markdownlint-cli2 --global
-sudo npm install markdown-toc --global
-sudo npm install -g @mermaid-js/mermaid-cli
+sudo pacman -S --noconfirm nodejs npm
+sudo npm install --global neovim
+sudo npm install --global prettier
+sudo npm install --global markdownlint-cli2
+sudo npm install --global markdown-toc
+sudo npm install --global @mermaid-js/mermaid-cli
 
 # python
 sudo pacman -S --noconfirm python3 python-pip python-virtualenv python-pynvim
