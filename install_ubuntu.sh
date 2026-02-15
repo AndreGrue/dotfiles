@@ -86,6 +86,7 @@ sudo npm install prettier --global
 sudo npm install markdownlint-cli2 --global
 sudo npm install markdown-toc --global
 sudo npm install -g @mermaid-js/mermaid-cli
+sudo npm install -g homeassistant-lsp
 
 # python
 sudo apt-get install -y python3-pip python3-venv python3-neovim
