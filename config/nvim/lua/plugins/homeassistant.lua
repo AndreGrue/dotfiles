@@ -19,7 +19,7 @@ return {
           settings = {
             homeassistant = {
               host = "ws://homeassistant.local:8123/api/websocket",
-              token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxNTdiZGU1NTFmNmI0NDYxOTRjMTc2MmMzNmNhN2U4YyIsImlhdCI6MTc3MTE1NTQwNSwiZXhwIjoyMDg2NTE1NDA1fQ.t9GhS5zbvqcEF-5okh5ARnDCF0gyjuQJndXqOu1yPMc",
+              token = "XXX",
               timeout = 5000,
             },
             cache = {
