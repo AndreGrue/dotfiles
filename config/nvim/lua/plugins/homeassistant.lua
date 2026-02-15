@@ -1,4 +1,8 @@
 ---
+---  https://github.com/myakove/homeassistant-nvim
+---
+--- export HOMEASSISTANT_TOKEN=""
+---
 return {
   {
     "myakove/homeassistant-nvim",
@@ -19,7 +23,8 @@ return {
           settings = {
             homeassistant = {
               host = "ws://homeassistant.local:8123/api/websocket",
-              token = "XXX",
+              -- token = "XXX",
+              token = os.getenv("HOMEASSISTANT_TOKEN"), -- Read from environment
               timeout = 5000,
             },
             cache = {
