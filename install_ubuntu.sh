@@ -68,7 +68,7 @@ pipx install jupytext
 
 # lua
 sudo apt-get install -y luarocks
-sudo luarocks install magick
+sudo luarocks install magick dkjson
 
 # rust
 sudo apt-get purge -y tree-sitter
