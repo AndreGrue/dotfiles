@@ -49,6 +49,7 @@ brew tap natesales/repo https://github.com/natesales/repo
 brew install q
 brew install xsv jq jc fx sd
 brew install imagemagick
+brew install copilot-cli gh 
 
 ## file manager
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
