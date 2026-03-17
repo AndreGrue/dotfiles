@@ -1,15 +1,15 @@
 ---
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = { enabled = true },
-  --       panel = { enabled = true },
-  --     })
-  --   end,
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = true },
+        panel = { enabled = true },
+      })
+    end,
+  },
 
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -19,7 +19,7 @@ return {
     build = "make tiktoken",
     opts = {
       -- See Configuration section for options
-      model = "claude-haiuki-4.5", -- AI model to use
+      -- model = "claude-haiuki-4.5", -- AI model to use
       auto_insert_mode = true,
       auto_follow_cursor = true,
       auto_fold = true,

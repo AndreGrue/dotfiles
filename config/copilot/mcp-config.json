@@ -19,6 +19,14 @@
     "sequential-thinking": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "ssh-manager": {
+      "command": "npx",
+      "args": ["-y", "mcp-ssh-manager"]
     }
   }
 }
