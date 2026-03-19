@@ -24,9 +24,12 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
     },
-    "ssh-manager": {
-      "command": "npx",
-      "args": ["-y", "mcp-ssh-manager"]
+    "homeassistant": {
+      "url": "http://192.168.178.201:8123/api/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${HA_TOKEN}"
+      }
     }
   }
 }
