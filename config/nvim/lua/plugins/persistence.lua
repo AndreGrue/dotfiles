@@ -6,7 +6,7 @@ return {
     enabled = false,
     event = "BufReadPre",
     opts = {
-      dir = vim.fn.expand(""),
+      dir = vim.fn.stdpath("state") .. "/sessions",
       options = vim.opt.sessionoptions:get(),
     },
     -- stylua: ignore

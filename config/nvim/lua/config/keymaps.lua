@@ -50,7 +50,7 @@ map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 local function send_command_to_terminal(cmd)
   -- Iterate over all buffers to find a terminal buffer
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-    if vim.api.nvim_buf_get_option(buf, "buftype") == "terminal" then
+    if vim.bo[buf].buftype == "terminal" then
       -- Send the command to the terminal buffer
       vim.fn.chansend(vim.api.nvim_buf_get_var(buf, "terminal_job_id"), cmd .. "\n")
       return
