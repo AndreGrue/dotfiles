@@ -2,20 +2,29 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- Load Neo-tree plugin and open it on startup
--- vim.api.nvim_create_autocmd("VimEnter", {
---   pattern = "*",
---   command = "Neotree",
--- })
+-- Open Neo-tree automatically on startup.
+--
+-- Why vim.schedule instead of a VimEnter autocmd:
+-- This file is sourced during the "VeryLazy" event (after UIEnter), so any
+-- VimEnter/UIEnter autocmd registered here would never fire for the current
+-- session. vim.schedule defers execution to the next event-loop tick, which
+-- is after LazyVim finishes bootstrapping — the right moment to open the tree.
+vim.schedule(function()
+  -- Only open on bare `nvim` or `nvim .` — skip when a specific file is given.
+  local argv = vim.fn.argv() --[[@as string[] ]]
+  if #argv > 0 and vim.fn.isdirectory(argv[1]) == 0 then
+    return
+  end
 
--- Debugging: Automatically open Neo-tree on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    print("Opening Neo-tree")
-    -- vim.cmd("Neotree")
-  end,
-})
+  -- Skip special buffers: git commit messages, terminals, oil.nvim, etc.
+  local bufname = vim.api.nvim_buf_get_name(0)
+  if vim.bo.buftype ~= "" or bufname:match("^oil://") then
+    return
+  end
+
+  -- Open Neo-tree rooted at cwd (not tied to any specific file).
+  require("neo-tree.command").execute({ action = "show", dir = vim.uv.cwd() })
+end)
 
 -- open a terminal always in insert mode
 vim.api.nvim_create_autocmd("TermOpen", {
