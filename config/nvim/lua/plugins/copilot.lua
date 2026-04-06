@@ -1,4 +1,9 @@
 ---
+---
+-- stylua: ignore
+if true then return {} end
+
+---
 return {
   {
     "zbirenbaum/copilot.lua",
@@ -58,33 +63,33 @@ return {
         width = 0.4,
       },
     },
-    keys = {
-      { "<leader>z", "", desc = "+ai", mode = { "n", "x" } },
-      -- { "<leader>zq", "<cmd>CopilotChatQuick<cr>", desc = "Quick chat" },
-      {
-        "<leader>zq",
-        function()
-          vim.ui.input({
-            prompt = "🤖 Quick Chat: ",
-          }, function(input)
-            if input ~= "" then
-              require("CopilotChat").ask(input)
-            end
-          end)
-        end,
-        desc = "Quick Chat (CopilotChat)",
-        mode = { "n", "x" },
-      },
-      { "<leader>zc", "<cmd>CopilotChatToggle<cr>", desc = "Toggle chat" },
-      { "<leader>zx", "<cmd>CopilotChatReset<cr>", desc = "Toggle chat" },
-      { "<leader>ze", "<cmd>CopilotChatExplain<cr>", desc = "Explain code", mode = "v" },
-      { "<leader>zr", "<cmd>CopilotChatReview<cr>", desc = "Review code", mode = "v" },
-      { "<leader>zf", "<cmd>CopilotChatFix<cr>", desc = "Fix code", mode = "v" },
-      { "<leader>zd", "<cmd>CopilotChatDocs<cr>", desc = "Generate docs", mode = "v" },
-      { "<leader>zt", "<cmd>CopilotChatTests<cr>", desc = "Generate tests", mode = "v" },
-      { "<leader>z/", "<cmd>CopilotChatModels<cr>", desc = "Select model" },
-      { "<leader>zm", "<cmd>CopilotChatCommit<cr>", desc = "Generate commit message" },
-      { "<leader>zs", "<cmd>CopilotChatCommit<cr>", desc = "Generate commit message for selection", mode = "v" },
-    },
+    -- keys = {
+    --   -- { "<leader>z", "", desc = "+ai", mode = { "n", "x" } },
+    --   -- { "<leader>zq", "<cmd>CopilotChatQuick<cr>", desc = "Quick chat" },
+    --   {
+    --     "<leader>zq",
+    --     function()
+    --       vim.ui.input({
+    --         prompt = "🤖 Quick Chat: ",
+    --       }, function(input)
+    --         if input ~= "" then
+    --           require("CopilotChat").ask(input)
+    --         end
+    --       end)
+    --     end,
+    --     desc = "Quick Chat (CopilotChat)",
+    --     mode = { "n", "x" },
+    --   },
+    --   { "<leader>zc", "<cmd>CopilotChatToggle<cr>", desc = "Toggle chat" },
+    --   { "<leader>zx", "<cmd>CopilotChatReset<cr>", desc = "Reset chat" },
+    --   { "<leader>ze", "<cmd>CopilotChatExplain<cr>", desc = "Explain code", mode = "v" },
+    --   { "<leader>zr", "<cmd>CopilotChatReview<cr>", desc = "Review code", mode = "v" },
+    --   { "<leader>zf", "<cmd>CopilotChatFix<cr>", desc = "Fix code", mode = "v" },
+    --   { "<leader>zd", "<cmd>CopilotChatDocs<cr>", desc = "Generate docs", mode = "v" },
+    --   { "<leader>zt", "<cmd>CopilotChatTests<cr>", desc = "Generate tests", mode = "v" },
+    --   { "<leader>z/", "<cmd>CopilotChatModels<cr>", desc = "Select model" },
+    --   { "<leader>zm", "<cmd>CopilotChatCommit<cr>", desc = "Generate commit message" },
+    --   { "<leader>zs", "<cmd>CopilotChatCommit<cr>", desc = "Generate commit message for selection", mode = "v" },
+    -- },
   },
 }
