@@ -36,6 +36,7 @@ return {
       end
 
       opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
@@ -67,6 +68,7 @@ return {
     opts = {
       keymap = {
         preset = "default",
+        ["<CR>"] = { "accept", "fallback" },
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       },

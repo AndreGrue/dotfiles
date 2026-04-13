@@ -30,6 +30,21 @@
       "headers": {
         "Authorization": "Bearer ${HA_TOKEN}"
       }
+    },
+    "wireshark-mcp": {
+      "command": "python3",
+      "args": ["-u", "-m", "wireshark_mcp.server"],
+      "env": {
+        "PATH": "/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pkg/env/active/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/dev/kitty.app/Contents/MacOS:/Users/andre/workspace/dotfiles/scripts:/Users/andre/.local/bin:/Users/andre/.cargo/bin:/opt/nvim-linux-x86_64/bin:/opt/nvim-macos-arm64/bin:/Users/andre/workspace/dotfiles/scripts:/Users/andre/.local/bin:/Users/andre/.cargo/bin:/opt/nvim-linux-x86_64/bin:/opt/nvim-macos-arm64/bin:/Users/andre/workspace/dotfiles/scripts:/Users/andre/.local/bin:/Users/andre/.cargo/bin:/opt/nvim-linux-x86_64/bin:/opt/nvim-macos-arm64/bin",
+        "WIRESHARK_MCP_TSHARK_PATH": "/opt/homebrew/bin/tshark",
+        "WIRESHARK_MCP_CAPINFOS_PATH": "/opt/homebrew/bin/capinfos",
+        "WIRESHARK_MCP_MERGECAP_PATH": "/opt/homebrew/bin/mergecap",
+        "WIRESHARK_MCP_EDITCAP_PATH": "/opt/homebrew/bin/editcap",
+        "WIRESHARK_MCP_DUMPCAP_PATH": "/opt/homebrew/bin/dumpcap",
+        "WIRESHARK_MCP_TEXT2PCAP_PATH": "/opt/homebrew/bin/text2pcap",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
     }
   }
 }

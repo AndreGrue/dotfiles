@@ -20,3 +20,8 @@ npm install -g @modelcontextprotocol/server-memory
 # npm install -g @zibdie/ssh-mcp-server
 # https://github.com/classfang/ssh-mcp-server
 # npm install -g @fangjunjie/ssh-mcp-server
+
+#
+# https://github.com/bx33661/Wireshark-MCP
+#
+pip install wireshark-mcp
