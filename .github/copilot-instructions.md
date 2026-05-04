@@ -47,6 +47,7 @@ Installed extras include: Python, Rust, C/Clang, CMake, Docker, Markdown, LaTeX,
 - `config/zsh/ohmyzshrc` — Oh My Zsh plugins
 
 Key env vars set in `zshrc`:
+
 - `DOTFILES=$HOME/workspace/dotfiles`
 - `SCRIPTS=$DOTFILES/scripts` (on PATH)
 - `EDITOR=nvim`

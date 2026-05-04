@@ -25,3 +25,8 @@ npm install -g @modelcontextprotocol/server-memory
 # https://github.com/bx33661/Wireshark-MCP
 #
 pip install wireshark-mcp
+
+#
+# https://github.com/juliusbrussee/caveman
+#
+npx skills add JuliusBrussee/caveman -a github-copilot

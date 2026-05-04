@@ -26,7 +26,7 @@ return {
       opts.formatters = vim.tbl_deep_extend("force", opts.formatters or {}, {
         ptop = {
           command = "ptop",
-          args = { "-c", "~/workspace/dotfiles/config/pascal/ptop.cfg", "$FILENAME", "$FILENAME" },
+          args = { "-c", vim.fn.expand("~/workspace/dotfiles/config/pascal/ptop.cfg"), "$FILENAME", "$FILENAME" },
           stdin = false,
           condition = function(ctx)
             return vim.fn.executable("ptop") == 1
@@ -37,6 +37,7 @@ return {
       -- Assign it to Pascal files
       opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft or {}, {
         pascal = { "ptop" },
+        objectpascal = { "ptop" },
       })
     end,
   },
