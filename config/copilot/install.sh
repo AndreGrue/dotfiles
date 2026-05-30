@@ -4,9 +4,7 @@
 #
 npm install -g @github/copilot
 
-#
 # https://github.com/modelcontextprotocol/servers
-#
 npm install -g @modelcontextprotocol/server-filesystem
 npm install -g @modelcontextprotocol/server-sequential-thinking
 npm install -g @modelcontextprotocol/server-memory
@@ -14,19 +12,10 @@ npm install -g @modelcontextprotocol/server-memory
 # pip3 install mcp-server-fetch
 # pip3 install mcp-server-git
 
-# https://github.com/bvisible/mcp-ssh-manager
-# npm install -g mcp-ssh-manager
-# https://github.com/zibdie/SSH-MCP-Server
-# npm install -g @zibdie/ssh-mcp-server
-# https://github.com/classfang/ssh-mcp-server
-# npm install -g @fangjunjie/ssh-mcp-server
-
-#
 # https://github.com/bx33661/Wireshark-MCP
-#
 pip install wireshark-mcp
 
 #
-# https://github.com/juliusbrussee/caveman
-#
+# skills
 npx skills add JuliusBrussee/caveman -a github-copilot
+npx skills add https://github.com/multica-ai/andrej-karpathy-skills --skill karpathy-guidelines
