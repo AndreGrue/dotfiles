@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-#
-#
-#
-npm install -g @github/copilot
+
+# npm install -g @github/copilot
+npm install -g opencode-ai
 
 # https://github.com/modelcontextprotocol/servers
 npm install -g @modelcontextprotocol/server-filesystem
