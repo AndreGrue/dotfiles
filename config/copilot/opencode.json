@@ -8,6 +8,22 @@
     ".github/instructions/*.md",
     ".github/instructions/**/*.md"
   ],
+  "lsp": {
+    "pasls": {
+      "command": ["pasls"],
+      "extensions": [".pas", ".pp", ".inc", ".lpr", ".lpk"],
+      "env": {
+        "PP": "/opt/homebrew/bin/ppca64",
+        "FPCTARGETCPU": "aarch64"
+      }
+    }
+  },
+  "formatter": {
+    "jcf": {
+      "command": ["jcf", "-f", "$FILE"],
+      "extensions": [".pas", ".pp", ".inc", ".lpr"]
+    }
+  },
   "mcp": {
     "filesystem": {
       "type": "local",
