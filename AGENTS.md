@@ -76,8 +76,8 @@ Config: `config/copilot/mcp-config.json`. Active: filesystem, fetch, git, sequen
 
 ## Adding new tools
 
-| OS | Package manager |
-|----|----------------|
-| macOS | Homebrew only |
+| OS     | Package manager                                         |
+| ------ | ------------------------------------------------------- |
+| macOS  | Homebrew only                                           |
 | Ubuntu | apt for common tools; GitHub releases for nvim, lazygit |
-| Arch | pacman (not apt — see bug above) |
+| Arch   | pacman (not apt — see bug above)                        |

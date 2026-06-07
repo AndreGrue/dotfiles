@@ -16,13 +16,15 @@
         "PP": "/opt/homebrew/bin/ppca64",
         "FPCTARGETCPU": "aarch64"
       }
-    }
+    },
+    "clangd": {}
   },
   "formatter": {
     "jcf": {
       "command": ["jcf", "-f", "$FILE"],
       "extensions": [".pas", ".pp", ".inc", ".lpr"]
-    }
+    },
+    "clang-format": {}
   },
   "mcp": {
     "filesystem": {
