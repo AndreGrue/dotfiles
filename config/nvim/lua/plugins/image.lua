@@ -11,6 +11,10 @@ return {
     priority = 1001, -- this plugin needs to run before anything else
     opts = {
       rocks = { "magick" },
+      luarocks_build_args = {
+        "--with-lua=/opt/homebrew/opt/luajit",
+        "--with-lua-include=/opt/homebrew/include/luajit-2.1",
+      },
     },
   },
   {
