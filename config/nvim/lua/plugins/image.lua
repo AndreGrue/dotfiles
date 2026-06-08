@@ -9,6 +9,13 @@ return {
   {
     "vhyrro/luarocks.nvim",
     priority = 1001, -- this plugin needs to run before anything else
+    init = function()
+      -- luarocks 3.13+ vendors dkjson under luarocks/vendor/ but luarocks-nvim's
+      -- setup() only adds the top-level share path. Add the vendor path here so
+      -- require("dkjson") resolves when luarocks.loader is loaded.
+      local rocks = vim.fn.stdpath("data") .. "/lazy/luarocks.nvim/.rocks"
+      package.path = rocks .. "/share/lua/5.1/luarocks/vendor/?.lua;" .. package.path
+    end,
     opts = {
       rocks = { "magick" },
       luarocks_build_args = {
