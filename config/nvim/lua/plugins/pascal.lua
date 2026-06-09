@@ -21,23 +21,36 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    opts = function(_, opts)
-      -- Register custom formatter
-      opts.formatters = vim.tbl_deep_extend("force", opts.formatters or {}, {
-        ptop = {
-          command = "ptop",
-          args = { "-c", vim.fn.expand("~/workspace/dotfiles/config/pascal/ptop.cfg"), "$FILENAME", "$FILENAME" },
+    opts = {
+      formatters = {
+        pascal_format = {
+          command = "sh",
+          args = {
+            "-c",
+            "pascal-format -config="
+              .. vim.fn.expand("~/workspace/dotfiles/config/pascal/pascal-format.cfg")
+              .. ' "$1" && sed -i "1s/^\\xEF\\xBB\\xBF//" "$1"',
+            "--",
+            "$FILENAME",
+          },
           stdin = false,
-          condition = function(ctx)
-            return vim.fn.executable("ptop") == 1
-          end,
         },
-      })
-
-      -- Assign it to Pascal files
-      opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft or {}, {
-        pascal = { "ptop" },
-        objectpascal = { "ptop" },
+      },
+      formatters_by_ft = {
+        pascal = { "pascal_format" },
+        objectpascal = { "pascal_format" },
+      },
+    },
+  },
+  -- Fix J (join) stripping { comment openers
+  {
+    "folke/lazy.nvim",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "pascal", "objectpascal" },
+        callback = function()
+          vim.bo.comments = "://,s:(*,m: ,e:*)"
+        end,
       })
     end,
   },
