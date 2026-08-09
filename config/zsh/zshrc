@@ -21,6 +21,8 @@ export DOTFILES="$WORKSPACE/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 
 PATH="${PATH:+${PATH}:}$SCRIPTS:$HOME/.local/bin:$HOME/.cargo/bin:/opt/nvim-linux-x86_64/bin:/opt/nvim-macos-arm64/bin"
+PATH="$HOME/.opencode/bin:$PATH"
+PATH="$HOME/.npm-global/bin:$PATH"
 export PATH
 
 export EDITOR=nvim
@@ -121,9 +123,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export HOMEASSISTANT_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzMjg1MTg0ZDYzNmI0MDM5OTVkZmNiYTVmNWNmZDJmMiIsImlhdCI6MTc3MTE3NTY3MCwiZXhwIjoyMDg2NTM1NjcwfQ.V1_Rp-62fdLNynOlyvjm8sdboHOj5b8zFyuLyAKFq2s"
-export HA_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3ZWZiZDY4ZjljNGI0YmM1YTRiMGVmZDU1N2MzYjE1NCIsImlhdCI6MTc3MzUxODA3OSwiZXhwIjoyMDg4ODc4MDc5fQ.YTd92oDmD5q8fHoaCU4IP-9mKTK9xdDZytOhImpd1dg"
+#
+# additional env variables
+#
+[ -e "$HOME/.env" ] && source "$HOME/.env"
 
-# opencode
-export PATH=/Users/andre/.opencode/bin:$PATH
-export PATH="$HOME/.npm-global/bin:$PATH"

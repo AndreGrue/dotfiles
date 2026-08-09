@@ -28,7 +28,7 @@ border_symbol = "│"
 border_style = { fg = "#838ba7" }
 
 # Highlighting
-syntect_theme = "~/.config/yazi/Catppuccin-frappe.tmTheme"
+syntect_theme = "~/.config/yazi/flavors/catppuccin-frappe.yazi/tmtheme.xml"
 
 # : }}}
 
@@ -138,8 +138,8 @@ rules = [
   { mime = "application/x-rar", fg = "#f4b8e4" },
 
   # Fallback
-  { name = "*", fg = "#c6d0f5" },
-  { name = "*/", fg = "#8caaee" },
+  { url = "*", fg = "#c6d0f5" },
+  { url = "*/", fg = "#8caaee" },
 ]
 
 # : }}}
