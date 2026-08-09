@@ -15,10 +15,19 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 #############################################################################################
 # common
 sudo apt-get install -y eza bat ripgrep zoxide entr thefuck
-sudo apt-get install -y mc ncdu btop htop
+sudo apt-get install -y ncdu btop htop
 sudo apt-get install -y curl wget rsync lynx
 sudo apt-get install -y unzip gzip tar
 sudo apt-get install -y imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
+
+#############################################################################################
+# mc
+sudo apt-get install -y mc
+TMPDIR=/tmp/mc-onedark
+[ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
+git clone https://github.com/DeadNews/mc-onedark.git "$TMPDIR"
+mkdir -p "$HOME/.local/share/mc"
+cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
 # fzf
 sudo apt-get purge -y fzf

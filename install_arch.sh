@@ -15,9 +15,18 @@ wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
 #############################################################################################
 # common
 sudo pacman -S --noconfirm eza bat ripgrep ast-grep zoxide entr thefuck fzf fd
-sudo pacman -S --noconfirm mc ncdu btop htop
+sudo pacman -S --noconfirm ncdu btop htop
 sudo pacman -S --noconfirm curl wget rsync lynx
 sudo pacman -S --noconfirm unzip gzip tar
+
+#############################################################################################
+# mc
+sudo pacman -S --noconfirm mc
+TMPDIR=/tmp/mc-onedark
+[ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
+git clone https://github.com/DeadNews/mc-onedark.git "$TMPDIR"
+mkdir -p "$HOME/.local/share/mc"
+cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
 #############################################################################################
 # terminal

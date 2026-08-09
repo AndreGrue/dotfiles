@@ -11,18 +11,6 @@ mkdir -p "$XDG_CONFIG_HOME"/starship
 mkdir -p "$XDG_CONFIG_HOME"/lazygit
 
 #
-# addons
-#
-# [ ! -d "$XDG_CONFIG_HOME"/alacritty/themes ] && git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
-
-# mc
-TMPDIR=/tmp/mc-onedark
-[ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
-git clone https://github.com/DeadNews/mc-onedark.git ${TMPDIR}
-cp -r ${TMPDIR}/skins "$HOME"/.local/share/mc
-#cp ${TMPDIR}/config/*ini "$XDG_CONFIG_HOME"/mc/
-
-#
 # symbolic links
 #
 ln -sf "$PWD/config/markdownlint-cli2.yaml" "$HOME"/.markdownlint-cli2.yaml

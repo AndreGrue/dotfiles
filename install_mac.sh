@@ -41,7 +41,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #
 # commandline tools
 brew install eza bat ripgrep ast-grep zoxide entr thefuck
-brew install mc ranger ncdu
+brew install ranger ncdu
 brew install btop htop
 brew install unzip gzip tar
 brew install curl wget rsync lynx
@@ -49,7 +49,16 @@ brew tap natesales/repo https://github.com/natesales/repo
 brew install q
 brew install xsv jq jc fx sd
 brew install imagemagick
-brew install copilot-cli gh 
+brew install copilot-cli gh
+
+#############################################################################################
+# mc
+brew install mc
+TMPDIR=/tmp/mc-onedark
+[ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
+git clone https://github.com/DeadNews/mc-onedark.git "$TMPDIR"
+mkdir -p "$HOME/.local/share/mc"
+cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
 ## file manager
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
