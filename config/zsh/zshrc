@@ -120,3 +120,10 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+export HOMEASSISTANT_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzMjg1MTg0ZDYzNmI0MDM5OTVkZmNiYTVmNWNmZDJmMiIsImlhdCI6MTc3MTE3NTY3MCwiZXhwIjoyMDg2NTM1NjcwfQ.V1_Rp-62fdLNynOlyvjm8sdboHOj5b8zFyuLyAKFq2s"
+export HA_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3ZWZiZDY4ZjljNGI0YmM1YTRiMGVmZDU1N2MzYjE1NCIsImlhdCI6MTc3MzUxODA3OSwiZXhwIjoyMDg4ODc4MDc5fQ.YTd92oDmD5q8fHoaCU4IP-9mKTK9xdDZytOhImpd1dg"
+
+# opencode
+export PATH=/Users/andre/.opencode/bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"

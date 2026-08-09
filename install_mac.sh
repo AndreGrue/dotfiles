@@ -37,6 +37,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# herdr
+brew install herdr
+
 #############################################################################################
 #
 # commandline tools

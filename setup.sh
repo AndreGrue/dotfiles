@@ -7,6 +7,7 @@ export XDG_CONFIG_HOME="$HOME"/.config
 #
 # mkdir -p "$XDG_CONFIG_HOME"/alacritty
 mkdir -p "$XDG_CONFIG_HOME"/tmux
+mkdir -p "$XDG_CONFIG_HOME"/herdr
 mkdir -p "$XDG_CONFIG_HOME"/starship
 mkdir -p "$XDG_CONFIG_HOME"/lazygit
 
@@ -23,6 +24,7 @@ ln -sf "$PWD/config/lazygit/config.yml" "$XDG_CONFIG_HOME"/lazygit/config.yml
 ln -sf "$PWD/config/clang/.clang-format" "$HOME"/.clang-format
 # ln -sf "$PWD/config/alacritty/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 ln -sf "$PWD/config/tmux/tmux.conf" "$XDG_CONFIG_HOME"/tmux/tmux.conf
+ln -sf "$PWD/config/herdr/config.toml" "$XDG_CONFIG_HOME"/herdr/config.toml
 ln -sf "$PWD/config/starship/starship.toml" "$XDG_CONFIG_HOME"/starship.toml
 [ ! -L "$XDG_CONFIG_HOME"/kitty ] && ln -sf "$PWD/config/kitty" "$XDG_CONFIG_HOME"/
 [ ! -L "$XDG_CONFIG_HOME"/nvim ] && ln -sf "$PWD/config/nvim" "$XDG_CONFIG_HOME"/
