@@ -33,7 +33,7 @@ eval "$(thefuck --alias)"
 eval "$(zoxide init bash)"
 
 # FZF
-[ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -44,22 +44,22 @@ source <(fzf --bash)
 #
 #alias ll='ls -la'
 if command -v eza &>/dev/null; then
-	alias ls='eza'
-	alias ll='eza -alhg'
-	alias tree='eza --tree'
+  alias ls='eza'
+  alias ll='eza -alhg'
+  alias tree='eza --tree'
 fi
 if command -v exa &>/dev/null; then
-	alias ls='exa'
-	alias ll='exa -alhg'
-	alias tree='exa --tree'
+  alias ls='exa'
+  alias ll='exa -alhg'
+  alias tree='exa --tree'
 fi
 
 # cat
 if command -v bat &>/dev/null; then
-	alias cat='bat'
+  alias cat='bat'
 fi
 if command -v batcat &>/dev/null; then
-	alias cat='batcat'
+  alias cat='batcat'
 fi
 
 alias cd='z'
@@ -97,10 +97,10 @@ alias lg='lazygit'
 #
 backup() { cp -r "$@" "$@".backup_$(date +%Y%m%d-%H%M%S); }
 extract() {
-	case $1 in
-	*.tar.gz) tar xvzf $1 ;;
-	*.tar.bz2) tar xvjf $1 ;;
-	*.zip) unzip $1 ;;
-	*) echo "unknown format!" ;;
-	esac
+  case $1 in
+  *.tar.gz) tar xvzf $1 ;;
+  *.tar.bz2) tar xvjf $1 ;;
+  *.zip) unzip $1 ;;
+  *) echo "unknown format!" ;;
+  esac
 }
