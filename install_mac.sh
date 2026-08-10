@@ -22,11 +22,7 @@ brew install --cask font-ubuntu-nerd-font
 
 # kitty
 curl -fsSL https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-# alacritty
-# brew install alacritty
-# curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
-# mkdir -p ~/.bash_completion
-# cp /Applications/Alacritty.app/Contents/Resources/completions/alacritty.bash ~/.bash_completion/alacritty
+
 # zsh
 [ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -54,8 +50,8 @@ brew install natesales/repo/q
 brew install xsv jq jc fx sd
 brew install imagemagick
 
-###########################################################################################
-## file manager
+#############################################################################################
+# file manager
 
 # mc
 brew install mc
@@ -69,7 +65,7 @@ cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 [ -d "$HOME/.config/yazi/flavors/flexoki-dark.yazi" ] || ya pkg add gosxrgxx/flexoki-dark
 
-###########################################################################################
+#############################################################################################
 # nvim
 
 # fzf
@@ -94,19 +90,23 @@ npm install --global markdown-toc
 npm install --global @mermaid-js/mermaid-cli
 
 # rust
-brew install rust
+brew install rustup
+rustup default stable
+rustup update
+rustup component add rust-analyzer
+cargo install tree-sitter-cli gitlab-ci-ls ast-grep
 
 #
 brew install neovim
 
-###########################################################################################
+#############################################################################################
 # git
 brew install git git-delta lazygit
 
-###########################################################################################
+#############################################################################################
 # docker
 brew install lazydocker
 
-###########################################################################################
-## ai
+#############################################################################################
+# ai
 brew install copilot-cli gh

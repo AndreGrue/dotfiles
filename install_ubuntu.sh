@@ -1,4 +1,8 @@
 #!/bin/bash
+set -euo pipefail
+
+#############################################################################################
+# shell
 
 #############################################################################################
 # font
@@ -6,81 +10,83 @@
 #
 FONTPKG=SourceCodePro.zip
 FONTPATH=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1
-wget -P ~/.local/share/fonts $FONTPATH/$FONTPKG &&
-  cd ~/.local/share/fonts &&
-  unzip $FONTPKG &&
-  rm $FONTPKG &&
-  fc-cache -fv
+mkdir -p "$HOME/.local/share/fonts"
+wget -P "$HOME/.local/share/fonts" "$FONTPATH/$FONTPKG"
+unzip -o "$HOME/.local/share/fonts/$FONTPKG" -d "$HOME/.local/share/fonts"
+rm "$HOME/.local/share/fonts/$FONTPKG"
+fc-cache -fv
 
 #############################################################################################
-# common
-sudo apt-get install -y eza bat ripgrep zoxide entr thefuck
-sudo apt-get install -y ncdu btop htop
-sudo apt-get install -y curl wget rsync lynx
-sudo apt-get install -y unzip gzip tar
-sudo apt-get install -y imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
+# terminal
+
+# kitty
+curl -fsSL https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/kitty.app/bin/kitten" "$HOME/.local/bin/"
+cp "$HOME/.local/kitty.app/share/applications/kitty.desktop" "$HOME/.local/share/applications/"
+cp "$HOME/.local/kitty.app/share/applications/kitty-open.desktop" "$HOME/.local/share/applications/"
+sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" "$HOME/.local/share/applications/kitty"*.desktop
+sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" "$HOME/.local/share/applications/kitty"*.desktop
+echo 'kitty.desktop' >"$HOME/.config/xdg-terminals.list"
+
+# zsh
+sudo apt-get install -y zsh tmux
+[ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# tmux
+mkdir -p "$HOME/.config/tmux/plugins"
+[ -d "$HOME/.config/tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
+[ -d "$HOME/.config/tmux/plugins/catppuccin-tmux" ] || git clone -b v2.1.3 https://github.com/catppuccin/tmux.git "$HOME/.config/tmux/plugins/catppuccin-tmux"
+
+# herdr
+curl -fsSL https://herdr.dev/install.sh | sh
+
+# starship
+curl -sS https://starship.rs/install.sh | sh
 
 #############################################################################################
+# commandline tools
+
+sudo apt-get install -y \
+  eza bat ripgrep zoxide entr thefuck \
+  ncdu btop htop curl wget rsync lynx unzip gzip tar \
+  imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
+
+#############################################################################################
+# file manager
+
 # mc
-sudo apt-get install -y mc
+sudo apt-get install -y mc ffmpeg 7zip jq poppler-utils fd-find fzf
+mkdir -p "$HOME/.local/bin"
+ln -sf "$(command -v fdfind)" "$HOME/.local/bin/fd"
+
 TMPDIR=/tmp/mc-onedark
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 git clone https://github.com/DeadNews/mc-onedark.git "$TMPDIR"
 mkdir -p "$HOME/.local/share/mc"
 cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
-# fzf
-sudo apt-get purge -y fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# fd
-sudo apt-get install -y fd-find
-ln -s $(which fdfind) ~/.local/bin/fd
-
-#############################################################################################
-# terminal
-
-# starship
-curl -sS https://starship.rs/install.sh | sh
-
-# kitty
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-echo 'kitty.desktop' >~/.config/xdg-terminals.list
-
-# zsh
-sudo apt-get install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# tmux
-sudo apt-get install -y tmux
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-mkdir -p ~/.config/tmux/plugins/catppuccin
-git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/captpuccin-tmux
-
-# herdr
-curl -fsSL https://herdr.dev/install.sh | sh
-
-# file manager - yazi, see rust
-sudo apt-get -y install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
+# yazi
 
 #############################################################################################
 # nvim
 
+# fzf
+sudo apt-get purge -y fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+"$HOME/.fzf/install"
+
 # latex
-sudo apt-get install texlive-latex-base
-sudo apt-get install -y bibtex biber latexmk
+sudo apt-get install -y texlive-latex-base bibtex biber latexmk
 pipx install pylatexenc
 pipx install jupytext
 
 # lua
 sudo apt-get install -y luarocks
 sudo luarocks install magick dkjson
+
+# npm
+sudo apt-get install -y npm
+sudo npm install --global neovim prettier markdownlint-cli2 markdown-toc @mermaid-js/mermaid-cli homeassistant-lsp
 
 # rust
 sudo apt-get purge -y tree-sitter
@@ -91,35 +97,29 @@ rustup component add rust-analyzer
 cargo install tree-sitter-cli gitlab-ci-ls ast-grep
 cargo install --force yazi-build
 
-# node
-sudo apt-get install -y npm
-sudo npm install -g neovim
-sudo npm install prettier --global
-sudo npm install markdownlint-cli2 --global
-sudo npm install markdown-toc --global
-sudo npm install -g @mermaid-js/mermaid-cli
-sudo npm install -g homeassistant-lsp
-
 # python
 sudo apt-get install -y python3-pip python3-venv python3-neovim
 
 # neovim
-#sudo add-apt-repository ppa:neovim-ppa/unstable
-#sudo apt-get update
-#sudo apt-get install neovim
-sudo apt-get purge neovim
+sudo apt-get purge -y neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
+#############################################################################################
 # git
+
 sudo apt-get install -y git git-delta
-#sudo add-apt-repository ppa:lazygit-team/release
-#sudo apt update
-#sudo apt install lazygit
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+LAZYGIT_VERSION=$(curl -fsSL "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -fLo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 
-#brew install lazydocker
+#############################################################################################
+# docker
+
+sudo apt-get install -y docker.io docker-compose-v2
+curl -fsSL https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+#############################################################################################
+# ai
