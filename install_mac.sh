@@ -87,8 +87,11 @@ luarocks --local --lua-dir="$(brew --prefix luajit)" install magick
 
 # npm
 brew install npm
-npm install -g neovim
-npm install -g markdownlint-cli2 markdown-toc prettier
+npm install --global neovim
+npm install --global prettier
+npm install --global markdownlint-cli2
+npm install --global markdown-toc
+npm install --global @mermaid-js/mermaid-cli
 
 # rust
 brew install rust
