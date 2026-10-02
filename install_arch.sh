@@ -41,9 +41,9 @@ sudo pacman -S --noconfirm starship
 #############################################################################################
 # commandline tools
 sudo pacman -S --noconfirm \
-  eza bat ripgrep ast-grep zoxide entr thefuck fzf fd \
-  ranger mc ncdu btop htop \
-  curl wget rsync lynx unzip gzip tar
+	eza bat ripgrep ast-grep zoxide entr thefuck fzf fd \
+	ranger mc ncdu btop htop \
+	curl wget rsync lynx unzip gzip tar
 
 #############################################################################################
 # file manager
@@ -58,6 +58,9 @@ cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
 # yazi
 sudo pacman -S --noconfirm yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+
+# superfile
+sudo pacman -S --noconfirm superfile
 
 #############################################################################################
 # nvim

@@ -1,0 +1,37 @@
+# Superfile config
+# https://superfile.dev/configure/superfile-config/
+#
+# Only overrides are listed here, everything else keeps its default.
+
+#-- File Editor
+editor = "nvim"
+
+#-- Ignore Missing Config Fields
+# Only overrides are set here, so silence "missing field" warnings
+ignore_missing_fields = true
+
+#-- Code Previewer
+# "" for builtin chroma, "bat" for bat
+code_previewer = "bat"
+
+#-- Zoxide Support
+# Requires: zoxide
+zoxide_support = true
+
+#-- cd on quit
+cd_on_quit = true
+
+#-- Auto check for update
+auto_check_update = true
+
+#-- Theme
+theme = "catppuccin-mocha"
+
+#-- Nerd Fonts Support
+nerdfont = true
+
+#-- Transparent Background Support
+transparent_background = true
+
+#-- File opening rules
+[open_with]

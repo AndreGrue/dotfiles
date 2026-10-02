@@ -65,6 +65,9 @@ cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 [ -d "$HOME/.config/yazi/flavors/flexoki-dark.yazi" ] || ya pkg add gosxrgxx/flexoki-dark
 
+# superfile
+brew install superfile
+
 #############################################################################################
 # nvim
 

@@ -47,9 +47,9 @@ curl -sS https://starship.rs/install.sh | sh
 # commandline tools
 
 sudo apt-get install -y \
-  eza bat ripgrep zoxide entr thefuck \
-  ncdu btop htop curl wget rsync lynx unzip gzip tar \
-  imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
+	eza bat ripgrep zoxide entr thefuck \
+	ncdu btop htop curl wget rsync lynx unzip gzip tar \
+	imagemagick libmagickwand-dev libgraphicsmagick1-dev chafa
 
 #############################################################################################
 # file manager
@@ -66,6 +66,9 @@ mkdir -p "$HOME/.local/share/mc"
 cp -r "$TMPDIR/skins" "$HOME/.local/share/mc"
 
 # yazi
+
+# superfile
+bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
 
 #############################################################################################
 # nvim

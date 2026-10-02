@@ -30,3 +30,6 @@ ln -sf "$PWD/config/starship/starship.toml" "$XDG_CONFIG_HOME"/starship.toml
 [ ! -L "$XDG_CONFIG_HOME"/nvim ] && ln -sf "$PWD/config/nvim" "$XDG_CONFIG_HOME"/
 [ ! -L "$XDG_CONFIG_HOME"/mc ] && ln -sf "$PWD/config/mc" "$XDG_CONFIG_HOME"/
 [ ! -L "$XDG_CONFIG_HOME"/yazi ] && ln -sf "$PWD/config/yazi" "$XDG_CONFIG_HOME"/
+# superfile regenerates theme/ and hotkeys.toml inside its config dir, so link only the config file
+mkdir -p "$XDG_CONFIG_HOME"/superfile
+ln -sf "$PWD/config/superfile/config.toml" "$XDG_CONFIG_HOME"/superfile/config.toml
