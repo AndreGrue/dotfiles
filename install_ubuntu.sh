@@ -40,6 +40,9 @@ mkdir -p "$HOME/.config/tmux/plugins"
 # herdr
 curl -fsSL https://herdr.dev/install.sh | sh
 
+# tuios
+curl -fsSL https://raw.githubusercontent.com/Gaurav-Gosain/tuios/main/install.sh | bash
+
 # starship
 curl -sS https://starship.rs/install.sh | sh
 

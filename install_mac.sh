@@ -35,6 +35,9 @@ mkdir -p "$HOME/.config/tmux/plugins"
 # herdr
 brew install herdr
 
+# tuios
+brew install tuios
+
 # starship
 brew install starship
 
@@ -112,4 +115,75 @@ brew install lazydocker
 
 #############################################################################################
 # ai
-brew install copilot-cli gh
+
+#npm install -g opencode-ai
+# curl -fsSL https://opencode.ai/install | bash
+curl -fsSL https://opencode.ai/v2/install | bash
+
+#  https://github.com/Tarquinen/opencode-vim
+opencode plugin add opencode-vim@latest
+
+#  https://github.com/alvinunreal/oh-my-opencode-slim
+bunx oh-my-opencode-slim@latest install --no-tui --background-subagents=yes --preset=opencode-go
+
+#  https://github.com/juliusbrussee/caveman
+npm install -g @caveman-ai/cli
+caveman setup --install
+
+#  https://github.com/rtk-ai/rtk
+brew install rtk
+rtk init -g --opencode
+### overwrite until opencode v2 plugin is avalaible
+cat >"$HOME/.config/opencode/plugins/rtk.ts" <<"EOF"
+import { Plugin } from "@opencode/plugin";
+import { spawn } from "child_process";
+
+export default Plugin.define({
+  id: "rtk",
+  async setup(ctx) {
+    ctx.tool.hook("execute.before", async (action) => {
+      // Intercept bash/shell tool executions
+      if (action.tool === "shell" || action.tool === "bash") {
+        const originalCmd = action.arguments.command;
+        
+        // Pass the command through RTK for output compression
+        action.arguments.command = `rtk run "${originalCmd.replace(/"/g, '\\"')}"`;
+      }
+    });
+  }
+});
+EOF
+
+#  https://github.com/manojmallick/sigmap
+npm install -g sigmap
+sigmap --adapter copilot
+
+#  https://github.com/Tarquinen/opencode-dynamic-context-pruning
+# opencode plugin @tarquinen/opencode-dcp@latest --global
+opencode plugin add @tarquinen/opencode-dcp@latest
+
+cat >"$HOME/.config/opencode/dcp.jsonc" <<"EOF"
+{
+  "$schema": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/master/dcp.schema.json",
+  "enabled": true,
+  "autoUpdate": true,
+  "experimental": {
+    "allowSubAgents": true,
+  },
+  "compress": {
+    "maxContextLimit": "70%",
+    "minContextLimit": "30%",
+  },
+}
+EOF
+
+#  https://github.com/getagentseal/codeburn
+npm install -g codeburn
+
+#  https://github.com/Graphify-Labs/graphify
+uv tool install "graphifyy[leiden,pdf,mcp,pascal]"
+graphify opencode install # add to project
+graphify hook install     # git hook
+
+#  <https://github.com/Fission-AI/OpenSpec>
+npm install -g @fission-ai/openspec@latest
