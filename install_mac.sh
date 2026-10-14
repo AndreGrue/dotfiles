@@ -131,26 +131,47 @@ npm install -g @caveman-ai/cli
 caveman setup --install
 
 #  https://github.com/rtk-ai/rtk
-brew install rtk
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+# brew install rtk
 rtk init -g --opencode
 ### overwrite until opencode v2 plugin is avalaible
 cat >"$HOME/.config/opencode/plugins/rtk.ts" <<"EOF"
+// rtk OpenCode plugin (V2)
+// Wraps shell commands in `rtk run "..."` so RTK can compress tool output.
+//
+// OpenCode V2 exposes the tool arguments as `event.input` (mutable). The V1
+// name `action.arguments` no longer exists; reading it threw before every
+// shell call, which broke the shell tool entirely.
 import { Plugin } from "@opencode/plugin";
-import { spawn } from "child_process";
+import { execFileSync } from "node:child_process";
+
+// A non-zero exit still means the binary exists; only ENOENT means missing.
+function commandExists(command: string): boolean {
+  try {
+    execFileSync(command, ["--help"], { stdio: "ignore", timeout: 1000 });
+    return true;
+  } catch (error) {
+    return (error as { code?: string } | undefined)?.code !== "ENOENT";
+  }
+}
 
 export default Plugin.define({
   id: "rtk",
   async setup(ctx) {
-    ctx.tool.hook("execute.before", async (action) => {
-      // Intercept bash/shell tool executions
-      if (action.tool === "shell" || action.tool === "bash") {
-        const originalCmd = action.arguments.command;
-        
-        // Pass the command through RTK for output compression
-        action.arguments.command = `rtk run "${originalCmd.replace(/"/g, '\\"')}"`;
-      }
+    // Without rtk installed, leave shell commands untouched instead of
+    // rewriting them into a command that cannot run.
+    if (!commandExists("rtk")) return;
+
+    await ctx.tool.hook("execute.before", (event) => {
+      // V2 exposes the shell tool as "shell"; accept legacy "bash" too.
+      if (event.tool !== "shell" && event.tool !== "bash") return;
+
+      const input = event.input as { command?: unknown } | undefined;
+      if (!input || typeof input.command !== "string" || input.command.length === 0) return;
+
+      input.command = `rtk run "${input.command.replace(/"/g, '\\"')}"`;
     });
-  }
+  },
 });
 EOF
 
@@ -182,8 +203,6 @@ npm install -g codeburn
 
 #  https://github.com/Graphify-Labs/graphify
 uv tool install "graphifyy[leiden,pdf,mcp,pascal]"
-graphify opencode install # add to project
-graphify hook install     # git hook
 
 #  <https://github.com/Fission-AI/OpenSpec>
 npm install -g @fission-ai/openspec@latest
