@@ -206,3 +206,6 @@ uv tool install "graphifyy[leiden,pdf,mcp,pascal]"
 
 #  <https://github.com/Fission-AI/OpenSpec>
 npm install -g @fission-ai/openspec@latest
+
+#  SKILLS
+##    https://github.com/mattpocock/skills
