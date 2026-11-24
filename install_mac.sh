@@ -127,8 +127,10 @@ opencode plugin add opencode-vim@latest
 bunx oh-my-opencode-slim@latest install --no-tui --background-subagents=yes --preset=opencode-go
 
 #  https://github.com/juliusbrussee/caveman
-npm install -g @caveman-ai/cli
-caveman setup --install
+# npm install -g @caveman-ai/cli
+npx -y github:juliusbrussee/caveman -- --only opencode
+# caveman setup --install
+# caveman enable opencode
 
 #  https://github.com/rtk-ai/rtk
 curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
@@ -209,3 +211,4 @@ npm install -g @fission-ai/openspec@latest
 
 #  SKILLS
 ##    https://github.com/mattpocock/skills
+npx skills@latest add mattpocock/skills -a opencode
